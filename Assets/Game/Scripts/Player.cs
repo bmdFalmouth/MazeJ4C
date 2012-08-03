@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
 	
 	public float speed=10.0f;
 	public Transform spotLightTransform;
+	public AudioClip footStepAudio;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,10 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		if (rigidbody.velocity.magnitude>0)
+		{
+			audio.PlayOneShot(footStepAudio);
+		}
 		rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
 		rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
 		
