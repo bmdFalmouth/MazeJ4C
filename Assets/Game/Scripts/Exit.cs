@@ -15,7 +15,7 @@ public class Exit : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag.Equals("Player")) {
-			Destroy(other.gameObject);
+			Debug.Log ("Exit");
 		}
 	}
 }
