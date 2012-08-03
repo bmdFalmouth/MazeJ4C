@@ -67,4 +67,8 @@ public class GameGUI : MonoBehaviour {
 			}
 		}
 	}
+	
+	void OnGUI() {
+		GUI.Label (new Rect (Screen.width - 100, 10, 100, 20), "Score: " + score);
+	}
 }
