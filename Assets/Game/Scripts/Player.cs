@@ -1,22 +1,34 @@
 using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour 
+{
 	
 	public float speed=10.0f;
 	public Transform spotLightTransform;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		//Remember to add in code to check for audiosource
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		//have to play the character audio here!!!
 		
 		rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
 		rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
+		
+		if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
+		{
+
+			this.gameObject.GetComponent<AudioSource>().Play();
+		}
+
+		
+		
 		
 		Vector3 spotPosUpdate=spotLightTransform.position;
 		spotPosUpdate.x=transform.position.x;
