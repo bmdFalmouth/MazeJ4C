@@ -23,5 +23,17 @@ public class ScoreScreenGUI : MonoBehaviour {
 		GUI.Label(new Rect(30, 124, 64, 64), avatar2);
 		GUI.Label (new Rect(30, 218, 64, 64), avatar3);
 		GUI.Label (new Rect(30, 312, 64, 64), avatar4);
+		
+		if (GUI.Button (new Rect(Screen.width - 320, Screen.height - 50, 100, 50), "Continue")) {
+			Debug.Log ("Continue");
+		}
+		
+		if (GUI.Button (new Rect(Screen.width - 210, Screen.height - 50, 100, 50), "Main Menu")) {
+			Debug.Log ("Main Menu");
+		}
+		
+		if (GUI.Button (new Rect(Screen.width - 100, Screen.height - 50, 100, 50), "Exit")) {
+			Debug.Log ("Exit");
+		}
 	}
 }
