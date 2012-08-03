@@ -12,8 +12,11 @@ Library/expandedItems
 Library/metadata
 Library/previews
 Library/guidmapper
+Library/InspectExpandItems.asset
 Temp
+*.userprefs
 *.csproj
 *.pidb
 *.sln
+*.unityproj
 build
