@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 	
 	public float speed=10.0f;
 	public Transform spotLightTransform;
+	public AudioClip stepOne;
+	public AudioClip stepTwo;
+	bool leftRight = false;
 
 	// Use this for initialization
 	void Start () 
@@ -23,7 +26,10 @@ public class Player : MonoBehaviour
 		
 		if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
 		{
-
+			if(leftRight)
+				this.gameObject.GetComponent<AudioSource>().clip = stepOne;
+			else
+				this.gameObject.GetComponent<AudioSource>().clip = stepTwo;
 			this.gameObject.GetComponent<AudioSource>().Play();
 		}
 
