@@ -12,8 +12,8 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxis("X-Axis"))
-		{
-		}
+		
+		rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
+		rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
 	}
 }
