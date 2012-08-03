@@ -1,21 +1,17 @@
 using UnityEngine;
 using System.Collections;
 
-public class GameGUI : MonoBehaviour {
+public class SupportCamera : MonoBehaviour {
 	
-	public int score = 0;
+	public Camera supportCamera;
 	
 	// Use this for initialization
 	void Start () {
-	
+		camera.transform.Translate (new Vector3(0, 0, -40));
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-	
-	void OnGUI() {
-		GUI.Label (new Rect (Screen.width - 100, 10, 100, 20), "Score: " + score);
 	}
 }

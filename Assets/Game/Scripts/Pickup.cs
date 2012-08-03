@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GameGUI : MonoBehaviour {
-	
-	public int score = 0;
+public class Pickup : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
@@ -15,7 +13,9 @@ public class GameGUI : MonoBehaviour {
 	
 	}
 	
-	void OnGUI() {
-		GUI.Label (new Rect (Screen.width - 100, 10, 100, 20), "Score: " + score);
+	void OnTriggerEnter(Collider other) {
+		if (other.tag.Equals("Player")) {
+			Destroy(gameObject);
+		}
 	}
 }
