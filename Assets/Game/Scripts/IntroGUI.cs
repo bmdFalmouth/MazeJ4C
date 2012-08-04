@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class IntroGUI : MonoBehaviour {
@@ -15,9 +15,7 @@ public class IntroGUI : MonoBehaviour {
 		panel3,
 		panel4,
 		panel5,
-		panel6, 
-		scene4,
-		scene6,
+		panel6,
 		tutorialScreen2
 	};
 	
@@ -40,16 +38,7 @@ public class IntroGUI : MonoBehaviour {
 			if (Input.GetKeyDown ("space")) {
 				introState = State.storyScreen;
 			}
-<<<<<<< HEAD
-			return;
-=======
-			
-		
-		case State.storyScreen:
-			//display story text
-			
-			//image of Patch on the right
->>>>>>> b50091824d9ca167b33b10dd3687af0c7765cef2
+			break;
 			
 		case State.panel1:
 			if (currentTime - startTime > 8) {
@@ -57,7 +46,7 @@ public class IntroGUI : MonoBehaviour {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 			}
-			return;
+			break;
 			
 		case State.panel2:
 			if (currentTime - startTime > 8) {
@@ -65,7 +54,7 @@ public class IntroGUI : MonoBehaviour {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 			}
-			return;
+			break;
 			
 		case State.panel3:
 			if (currentTime - startTime > 8) {
@@ -73,7 +62,7 @@ public class IntroGUI : MonoBehaviour {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 			}
-			return;
+			break;
 			
 		case State.panel4:
 			if (currentTime - startTime > 8) {
@@ -81,7 +70,7 @@ public class IntroGUI : MonoBehaviour {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 			}
-			return;
+			break;
 			
 		case State.panel5:
 			if (currentTime - startTime > 8) {
@@ -89,7 +78,7 @@ public class IntroGUI : MonoBehaviour {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 			}
-			return;
+			break;
 			
 		case State.panel6:
 			if (currentTime - startTime > 8) {
@@ -97,13 +86,13 @@ public class IntroGUI : MonoBehaviour {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 			}
-			return;
+			break;
 			
 		case State.tutorialScreen2:
 			if (currentTime - startTime > 8) {
 				//start game
 			}
-			return;
+			break;
 		}
 	}
 	
@@ -138,7 +127,7 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.panel3) {
-			GUI.Label (new Rect(Screen.width / 2 - 30, 30 ,100 ,20), "By finding hidden treasure");
+			GUI.Label (new Rect(Screen.width / 2 - 30, 30 ,150 ,20), "By finding hidden treasure");
 			//picture of chest and mound & *oooh* sound effect			
 			GUI.Label (new Rect(Screen.width - 100, Screen.height - 50, 100, 20), "What is it?");
 		}
@@ -163,13 +152,12 @@ public class IntroGUI : MonoBehaviour {
 		
 		else if (introState == State.tutorialScreen2) {
 			
-			GUI.Label (new Rect(Screen.width / 2 - 150, 30, 250, 20), "You control patch with the arrow keys");
+			GUI.Label (new Rect(Screen.width / 2 - 30, 30, 250, 20), "You control patch with the arrow keys");
 			//arrows appear
-			GUI.Label (new Rect(Screen.width / 2 - 200, 60, 250, 20), "Your \"friends\" direct you with theirs");
-			GUI.Label (new Rect(Screen.width / 2 - 300, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
-			GUI.Label (new Rect(Screen.width / 2 - 50, 180, 150, 20), "Time is limited");
+			GUI.Label (new Rect(Screen.width / 2 - 30, 60, 250, 20), "Your \"friends\" direct you with theirs");
+			GUI.Label (new Rect(Screen.width / 2 - 50, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
+			GUI.Label (new Rect(Screen.width / 2 - 30, 180, 150, 20), "Time is limited");
 			GUI.Label (new Rect(Screen.width / 2 - 30, 210, 100, 20), "Good luck");
 		}
 	}
 }
-*/
