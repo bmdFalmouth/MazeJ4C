@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 	void Start () 
 	{
 		//Remember to add in code to check for audiosource
+		spotLightTransform = GameObject.Find("Spotlight").transform;
 	}
 	
 	// Update is called once per frame
