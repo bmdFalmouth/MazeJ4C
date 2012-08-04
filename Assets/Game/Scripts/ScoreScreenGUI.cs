@@ -21,7 +21,7 @@ public class ScoreScreenGUI : MonoBehaviour {
 	void OnGUI() {
 		GUI.Label (new Rect(30, 30, 64, 64), MenuGUI.playerAvatar);
 		GUI.Label (new Rect(35, 10, 50, 20), MenuGUI.playerName);
-		GUI.Label (new Rect(100, 42, 100, 20), "Score: ");
+		GUI.Label (new Rect(100, 42, 100, 20), "Score: " + GameGUI.score);
 		
 		GUI.Label (new Rect(30, 124, 64, 64), avatar2);
 		GUI.Label (new Rect(100, 136, 100, 20), "Score: ");

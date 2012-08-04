@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameGUI : MonoBehaviour {
 	
-	public int score = 0;
+	static public int score = 0;
 	
 	public GameObject upArrow;
 	public GameObject downArrow;

@@ -22,8 +22,7 @@ public class Pickup : MonoBehaviour {
 			audio.Play ();
 			
 			Destroy(gameObject, audio.clip.length);
-			GameGUI gameGUI = Camera.main.GetComponent<GameGUI>();
-			gameGUI.score += scoreValue;
+			GameGUI.score += scoreValue;
 		}
 	}
 }
