@@ -13,7 +13,7 @@ function Update ()
 
 function OnNetworkLoadedLevel()
 {
-	if(Network.connections.Length == 1)
+	if(Network.connections.Length == 0)
 		Network.Instantiate(Template, transform.position, transform.rotation,0);
 	else
 		Debug.Log("P2 Connected");
