@@ -1,6 +1,6 @@
 #pragma strict
 var Template : UnityEngine.Transform; 
-  
+ var playerIndex : int;
 function Start () 
 {
 
