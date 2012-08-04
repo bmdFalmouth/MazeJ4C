@@ -7,7 +7,7 @@ public class VoteScreenGUI : MonoBehaviour {
 	public Texture2D avatar2;
 	public Texture2D avatar3;
 	
-	
+	//hello world
 	// Use this for initialization
 	void Start () {
 	
