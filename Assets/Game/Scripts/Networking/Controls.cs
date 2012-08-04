@@ -4,12 +4,14 @@ using System.Collections;
 public class Controls : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 	
@@ -17,7 +19,22 @@ public class Controls : MonoBehaviour {
 	{
 		if(GUI.Button(new Rect(20,100,50,50), "up"))
 		{
-			GameObject.Find("pf_NetworkTestPlayer(Clone)").transform.position = new Vector3(0,5,0); 
+			Debug.Log("Support Player Up");
+		}
+		
+		if(GUI.Button(new Rect(20,160,50,50), "down"))
+		{
+			Debug.Log("Support Player Down");
+		}
+		
+		if(GUI.Button(new Rect(20,210,50,50), "left"))
+		{
+			Debug.Log("Support Player Left");
+		}
+		
+		if(GUI.Button(new Rect(20,260,50,50), "right"))
+		{
+			Debug.Log("Support Player Right");
 		}
 	}
 }

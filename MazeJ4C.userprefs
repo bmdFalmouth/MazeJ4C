@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game\Scripts\Player.cs">
@@ -30,13 +31,28 @@
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> vcbcvb
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Networking/Instantiate.js">
+    <Files>
+      <File FileName="Assets/Game/Scripts/Player.cs" Line="46" Column="2" />
+      <File FileName="Assets/Game/Scripts/Networking/Controls.cs" Line="22" Column="32" />
+      <File FileName="Assets/Game/Scripts/IntroGUI.cs" Line="1" Column="4302" />
+      <File FileName="Assets/Game/Scripts/Networking/ConnectionGUI.js" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Networking/GameConnectionGUI.js" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Networking/Instantiate.js" Line="14" Column="2" />
+      <File FileName="Assets/Game/Scripts/GameGUI.cs" Line="20" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
 >>>>>>> ebaa187b5f9516b656115409b6441bbbca8a0658
 >>>>>>> 44fac9969677fe91e8f8b8fc7d8ec84c35ecd081
+=======
+>>>>>>> vcbcvb
 </Properties>
