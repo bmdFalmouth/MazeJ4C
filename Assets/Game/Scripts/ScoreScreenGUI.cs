@@ -19,7 +19,8 @@ public class ScoreScreenGUI : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		GUI.Label (new Rect(30, 30, 64, 64), avatar1);
+		GUI.Label (new Rect(30, 30, 64, 64), MenuGUI.playerAvatar);
+		GUI.Label (new Rect(35, 10, 50, 20), MenuGUI.playerName);
 		GUI.Label (new Rect(100, 42, 100, 20), "Score: ");
 		
 		GUI.Label (new Rect(30, 124, 64, 64), avatar2);
@@ -32,15 +33,15 @@ public class ScoreScreenGUI : MonoBehaviour {
 		GUI.Label (new Rect(100, 324, 100, 20), "Score: ");
 		
 		if (GUI.Button (new Rect(Screen.width - 320, Screen.height - 50, 100, 50), "Continue")) {
-			Debug.Log ("Continue");
+			Application.LoadLevel ("RichLeadNetworkTest");
 		}
 		
 		if (GUI.Button (new Rect(Screen.width - 210, Screen.height - 50, 100, 50), "Main Menu")) {
-			Debug.Log ("Main Menu");
+			Application.LoadLevel ("MainMenu");
 		}
 		
 		if (GUI.Button (new Rect(Screen.width - 100, Screen.height - 50, 100, 50), "Exit")) {
-			Debug.Log ("Exit");
+			Application.Quit ();
 		}
 	}
 }

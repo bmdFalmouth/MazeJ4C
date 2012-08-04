@@ -116,5 +116,14 @@ public class VoteScreenGUI : MonoBehaviour {
 				}
 			}
 		}
+		
+		if (positiveVote && neutralVote && negativeVote) {
+			if (GUI.Button (new Rect(30, 288, 100, 50), "Continue")) {
+				Application.LoadLevel ("ScoreScreen");
+			}
+		}
+		if (GUI.Button (new Rect(150, 288, 100, 50), "Exit")) {
+			Application.Quit ();
+		}
 	}
 }
