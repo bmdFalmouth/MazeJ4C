@@ -1,5 +1,5 @@
 #pragma strict
-var remoteIP = "127.0.0.1";
+var remoteIP = "10.39.70.175";
 var remotePort = 25000;
 var listenPort = 25000;
 var useNAT = false;

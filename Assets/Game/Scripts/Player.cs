@@ -41,18 +41,29 @@ public class Player : MonoBehaviour
 		
 	}
 	
-	public void GetVote(string vote, string ID)
+	/*public void GetVote(string vote, int ID)
 	{
 		switch(ID)
 		{
-			case "1":
+			case 2:
 			support2Vote = vote;
 			break;
 		}
-	}
+	}*/
 	
 	void OnGUI()
 	{
-		GUI.Label(new Rect(500,500,100,100),support2Vote);
+		GUI.Label(new Rect(500,500,100,100), support2Vote);
+	}
+	
+	[RPC]
+	void GetVote(string ID, string vote)
+	{
+		switch(ID)
+		{
+			case "2":
+			support2Vote = vote;
+			break;
+		}
 	}
 }
