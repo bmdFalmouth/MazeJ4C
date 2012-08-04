@@ -174,6 +174,4 @@ public class IntroGUI : MonoBehaviour {
 }
 <<<<<<< HEAD
 */
-=======
-*/
->>>>>>> 1a6c7d7aa46eed89a0210366449771a5eef14646
+
