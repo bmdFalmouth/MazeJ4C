@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Networking/Instantiate.js">
+    <Files>
+      <File FileName="Assets/Game/Scripts/Player.cs" Line="36" Column="3" />
+      <File FileName="Assets/Game/Scripts/Networking/ConnectionGUI.js" Line="30" Column="4" />
+      <File FileName="Assets/Game/Scripts/Networking/Instantiate.js" Line="23" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
