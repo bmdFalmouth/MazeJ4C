@@ -4,9 +4,11 @@ using System.Collections;
 public class IntroGUI : MonoBehaviour {
 	
 	public Texture2D titleCard;
+	public Texture2D story;
 	public Texture2D panel1;
 	public Texture2D panel2;
 	public Texture2D panel3;
+	public Texture2D panel4;
 	private float startTime = 0.0f;
 	private float currentTime = 0.0f;
 	private const int timeOut = 3;
@@ -102,14 +104,13 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.storyScreen) {
-			//display story text
-			
-			if (GUI.Button (new Rect(Screen.width / 2 - 110, Screen.height - 70, 100, 50), "How to play")) {
+			GUI.Label (new Rect(Screen.width / 2 - 200, 0, 400, 400), story);
+			if (GUI.Button (new Rect(Screen.width / 2 - 110, 350, 100, 50), "How to play")) {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 				introState = State.panel1;
 			}
-			if (GUI.Button (new Rect(Screen.width / 2 + 110, Screen.height - 70, 100, 50), "Sniff it Out")) {
+			if (GUI.Button (new Rect(Screen.width / 2 + 110, 350, 100, 50), "Sniff it Out")) {
 				Application.LoadLevel ("MainMenu");
 			}
 		}
@@ -130,8 +131,7 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.panel4) {
-			GUI.Label (new Rect(0, 30, 150, 20), "You friends can help");
-			//arrow directing patch towards chest
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel4, ScaleMode.StretchToFill);
 			//ping sound
 		}
 		

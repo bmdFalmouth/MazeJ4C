@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Pickup : MonoBehaviour {
 	
+	public Texture2D image;
 	public AudioClip soundEffect;
 	public int scoreValue = 5;
 	
@@ -18,10 +19,9 @@ public class Pickup : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag.Equals("Player")) {
-			Destroy(gameObject);
-			
 			audio.Play ();
 			
+			Destroy(gameObject, audio.clip.length);
 			GameGUI gameGUI = Camera.main.GetComponent<GameGUI>();
 			gameGUI.score += scoreValue;
 		}
