@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class Controls : MonoBehaviour {
-
+public class Controls : MonoBehaviour 
+{
+	GameObject upVote;
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -17,24 +19,29 @@ public class Controls : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(GUI.Button(new Rect(20,100,50,50), "up"))
+		if(!this.gameObject.GetComponent<NetworkView>().viewID.ToString().Contains("1"))
 		{
-			Debug.Log("Support Player Up");
+			if(GUI.Button(new Rect(20,100,50,50), "up"))
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Up");
+			}
+			
+			if(GUI.Button(new Rect(20,160,50,50), "down"))
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Down");
+			}
+			
+			if(GUI.Button(new Rect(20,210,50,50), "left"))
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Left");
+			}
+			
+			if(GUI.Button(new Rect(20,260,50,50), "right"))
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Right");
+			}
 		}
 		
-		if(GUI.Button(new Rect(20,160,50,50), "down"))
-		{
-			Debug.Log("Support Player Down");
-		}
-		
-		if(GUI.Button(new Rect(20,210,50,50), "left"))
-		{
-			Debug.Log("Support Player Left");
-		}
-		
-		if(GUI.Button(new Rect(20,260,50,50), "right"))
-		{
-			Debug.Log("Support Player Right");
-		}
+		GUI.Label(new Rect(500,500,200,200),this.gameObject.GetComponent<NetworkView>().viewID.ToString());
 	}
 }

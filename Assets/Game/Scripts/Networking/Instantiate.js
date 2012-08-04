@@ -18,7 +18,10 @@ function OnNetworkLoadedLevel()
 	if(Network.connections.Length == 0)
 		Network.Instantiate(Template, transform.position, transform.rotation,0);
 	else
+	{
 		Network.Instantiate(Support, transform.position, transform.rotation,0);
+		GameObject.Find("pf_Network_GamePlayer(clone)").rigidbody.active = false;
+	}
 }
 
 function OnPlayerDisconnected(player : NetworkPlayer)
