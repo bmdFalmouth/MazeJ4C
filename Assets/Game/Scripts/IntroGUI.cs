@@ -49,7 +49,7 @@ public class IntroGUI : MonoBehaviour {
 			//draw scene 3
 			
 			if (currentTime - startTime > 8) {
-				introScene = State.scene4;
+				 introState = State.scene4;
 			}
 			return;
 			
@@ -57,7 +57,7 @@ public class IntroGUI : MonoBehaviour {
 			//draw scene 4
 			
 			if (currentTime - startTime > 8) {
-				introScene = State.scene5;
+				introState = State.scene5;
 			}
 			return;
 			
@@ -65,7 +65,7 @@ public class IntroGUI : MonoBehaviour {
 			//draw scene 5
 			
 			if (currentTime - startTime > 8) {
-				introScene = State.scene6;
+				introState = State.scene6;
 			}
 			return;
 			
