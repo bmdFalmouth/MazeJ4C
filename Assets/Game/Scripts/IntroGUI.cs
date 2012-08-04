@@ -161,3 +161,12 @@ public class IntroGUI : MonoBehaviour {
 		}
 	}
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+*/
+<<<<<<< HEAD
+
+=======
+>>>>>>> one number
+>>>>>>> ebaa187b5f9516b656115409b6441bbbca8a0658
