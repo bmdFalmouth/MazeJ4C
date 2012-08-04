@@ -1,34 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game\Scripts\Networking\Controls.cs">
-    <Files>
-      <File FileName="Assets\Game\Scripts\Networking\Controls.cs" Line="65" Column="3" />
-      <File FileName="Assets\Game\Scripts\IntroGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game\Scripts\MapGeneration\GenerateMap.cs" Line="24" Column="53" />
-      <File FileName="Assets\Game\Scripts\Animation\AnimatedPlayer.cs" Line="57" Column="29" />
-      <File FileName="Assets\Game\Scripts\Player.cs" Line="52" Column="4" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
->>>>>>> bbbeed997277a070408fcdac51662c60a7c634d3
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-=======
-=======
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/staff/Documents/MazeJ4C/Assets/Game/Scripts/Networking/Controls.cs" line="62" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
->>>>>>> 25342e4c5dc9d08a1aa0721f90a3446aad0f9aa7
->>>>>>> bbbeed997277a070408fcdac51662c60a7c634d3
 </Properties>

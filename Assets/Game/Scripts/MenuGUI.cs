@@ -33,16 +33,28 @@ public class MenuGUI : MonoBehaviour {
 			}
 		}
 		
-		if (name.Equals(string.Empty) || selectedAvatar < -1) {
+		if (name.Equals(string.Empty) || selectedAvatar < 0) {
 			GUI.Box (new Rect(30, 150, 100, 50), "");
 		}
-		else if (GUI.Button (new Rect(30, 150, 100, 50), "Continue")) {
-			playerAvatar = avatar[selectedAvatar];
-			playerName = name;
-			//start game
+		else {
+			if (GUI.Button (new Rect(30, 150, 100, 50), "Client")) {
+				playerAvatar = avatar[selectedAvatar];
+				playerName = name;
+				Application.LoadLevel ("RichSupportNetworkTest");
+			}
+			if (GUI.Button (new Rect(150, 150, 100, 50), "Server" )) {
+				playerAvatar = avatar[selectedAvatar];
+				playerName = name;
+				Application.LoadLevel ("RichLeadNetworkTest");
+			}
+			
+//			if (GUI.Button (new Rect(30, 150, 100, 50), "Continue")) {
+//			playerAvatar = avatar[selectedAvatar];
+//			playerName = name;
+//			//start game
 		}
 		
-		if (GUI.Button (new Rect(150, 150, 100, 50), "Exit")) {
+		if (GUI.Button (new Rect(270, 150, 100, 50), "Exit")) {
 			Application.Quit();
 		}
 	}

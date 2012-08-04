@@ -20,6 +20,8 @@ public class Pickup : MonoBehaviour {
 		if (other.tag.Equals("Player")) {
 			Destroy(gameObject);
 			
+			audio.Play ();
+			
 			GameGUI gameGUI = Camera.main.GetComponent<GameGUI>();
 			gameGUI.score += scoreValue;
 		}

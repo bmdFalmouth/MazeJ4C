@@ -33,7 +33,7 @@ public class ScoreScreenGUI : MonoBehaviour {
 		GUI.Label (new Rect(100, 324, 100, 20), "Score: ");
 		
 		if (GUI.Button (new Rect(Screen.width - 320, Screen.height - 50, 100, 50), "Continue")) {
-			Debug.Log ("Continue");
+			Application.LoadLevel ("RichLeadNetworkTest");
 		}
 		
 		if (GUI.Button (new Rect(Screen.width - 210, Screen.height - 50, 100, 50), "Main Menu")) {
