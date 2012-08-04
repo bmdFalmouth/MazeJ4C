@@ -118,22 +118,22 @@ public class AnimatedPlayer : MonoBehaviour {
 			}	
 			case AnimationState.walkFront:
 			{
-				animatedSprite.Play("walkFront");
+				animatedSprite.PlayLoop("walkFront");
 				break;
 			}
 			case AnimationState.walkBack:
 			{
-				animatedSprite.Play("walkBack");
+				animatedSprite.PlayLoop("walkBack");
 				break;
 			}
 			case AnimationState.walkLeft:
 			{
-				animatedSprite.Play("walkLeft");
+				animatedSprite.PlayLoop("walkLeft");
 				break;
 			}			
 			case AnimationState.walkRight:
 			{
-				animatedSprite.Play("walkRight");
+				animatedSprite.PlayLoop("walkRight");
 				break;
 			}				
 		}		
