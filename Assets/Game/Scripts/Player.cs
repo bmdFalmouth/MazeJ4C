@@ -54,16 +54,25 @@ public class Player : MonoBehaviour
 	void OnGUI()
 	{
 		GUI.Label(new Rect(500,500,100,100), support2Vote);
+		
+		foreach(GameObject support in GameObject.FindGameObjectsWithTag("Support"))
+			GUI.Label(new Rect(500,700,100,100), support.GetComponent<Controls>().x.ToString());
 	}
 	
-	[RPC]
+	//[RPC]
+	/*void GetVote()
+	{
+		int x = 0;
+	}*/
+	
+	/*
 	void GetVote(string ID, string vote)
 	{
 		switch(ID)
 		{
-			case "2":
+			case "1":
 			support2Vote = vote;
 			break;
 		}
-	}
+	}*/
 }
