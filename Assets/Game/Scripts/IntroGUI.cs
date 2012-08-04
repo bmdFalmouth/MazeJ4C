@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class IntroGUI : MonoBehaviour {
@@ -15,7 +15,9 @@ public class IntroGUI : MonoBehaviour {
 		panel3,
 		panel4,
 		panel5,
-		panel6,
+		panel6, 
+		scene4,
+		scene6,
 		tutorialScreen2
 	};
 	
@@ -41,6 +43,7 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.storyScreen;
 			}
 			
+		
 		case State.storyScreen:
 			//display story text
 			
@@ -130,3 +133,4 @@ public class IntroGUI : MonoBehaviour {
 		}
 	}
 }
+*/
