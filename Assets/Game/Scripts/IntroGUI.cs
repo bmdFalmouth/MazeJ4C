@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class IntroGUI : MonoBehaviour {
@@ -15,7 +15,9 @@ public class IntroGUI : MonoBehaviour {
 		panel3,
 		panel4,
 		panel5,
-		panel6,
+		panel6, 
+		scene4,
+		scene6,
 		tutorialScreen2
 	};
 	
@@ -38,7 +40,16 @@ public class IntroGUI : MonoBehaviour {
 			if (Input.GetKeyDown ("space")) {
 				introState = State.storyScreen;
 			}
+<<<<<<< HEAD
 			return;
+=======
+			
+		
+		case State.storyScreen:
+			//display story text
+			
+			//image of Patch on the right
+>>>>>>> b50091824d9ca167b33b10dd3687af0c7765cef2
 			
 		case State.panel1:
 			if (currentTime - startTime > 8) {
@@ -161,3 +172,4 @@ public class IntroGUI : MonoBehaviour {
 		}
 	}
 }
+*/
