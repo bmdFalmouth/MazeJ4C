@@ -1,6 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game\Scripts\Networking\Controls.cs">
+    <Files>
+      <File FileName="Assets\Game\Scripts\Networking\Controls.cs" Line="67" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> 17a1ec8a2b0a907adc9b260cf66da0f489bc771b
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
