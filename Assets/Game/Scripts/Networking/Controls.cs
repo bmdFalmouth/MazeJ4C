@@ -4,11 +4,12 @@ using System.Collections;
 public class Controls : MonoBehaviour 
 {
 	GameObject upVote;
+	public int PlayerID = 0;
 	
 	// Use this for initialization
 	void Start () 
 	{
-	
+		PlayerID = Network.connections.Length;
 	}
 	
 	// Update is called once per frame
@@ -19,29 +20,29 @@ public class Controls : MonoBehaviour
 	
 	void OnGUI()
 	{
-		if(!this.gameObject.GetComponent<NetworkView>().viewID.ToString().Contains("1"))
+		if(PlayerID != 1)
 		{
 			if(GUI.Button(new Rect(20,100,50,50), "up"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Up");
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Up",PlayerID);
 			}
 			
 			if(GUI.Button(new Rect(20,160,50,50), "down"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Down");
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Down",PlayerID);
 			}
 			
 			if(GUI.Button(new Rect(20,210,50,50), "left"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Left");
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",PlayerID);
 			}
 			
 			if(GUI.Button(new Rect(20,260,50,50), "right"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote(this.gameObject.GetComponent<NetworkView>().viewID.ToString(),"Right");
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Right",PlayerID);
 			}
 		}
 		
-		GUI.Label(new Rect(500,500,200,200),this.gameObject.GetComponent<NetworkView>().viewID.ToString());
+		GUI.Label(new Rect(500,500,200,200),PlayerID.ToString());
 	}
 }

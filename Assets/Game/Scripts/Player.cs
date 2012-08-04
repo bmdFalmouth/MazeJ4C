@@ -41,11 +41,11 @@ public class Player : MonoBehaviour
 		
 	}
 	
-	public void GetVote(string vote, string ID)
+	public void GetVote(string vote, int ID)
 	{
 		switch(ID)
 		{
-			case "2":
+			case 2:
 			support2Vote = vote;
 			break;
 		}
