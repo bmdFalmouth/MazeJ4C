@@ -13,7 +13,10 @@ function Update ()
 
 function OnNetworkLoadedLevel()
 {
-	Network.Instantiate(Template, transform.position, transform.rotation,0);
+	if(Network.connections.Length == 1)
+		Network.Instantiate(Template, transform.position, transform.rotation,0);
+	else
+		Debug.Log("P2 Connected");
 }
 
 function OnPlayerDisconnected(player : NetworkPlayer)
