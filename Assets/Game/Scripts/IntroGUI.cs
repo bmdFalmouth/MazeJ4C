@@ -9,6 +9,8 @@ public class IntroGUI : MonoBehaviour {
 	public Texture2D panel2;
 	public Texture2D panel3;
 	public Texture2D panel4;
+	public Texture2D panel5;
+	public Texture2D panel6;
 	private float startTime = 0.0f;
 	private float currentTime = 0.0f;
 	private const int timeOut = 3;
@@ -136,14 +138,12 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.panel5) {
-			GUI.Label (new Rect(0, 30, 100, 20), "Hinder");
-			//Same as above, but arrow pointing away
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel5, ScaleMode.StretchToFill);
 			//*mischievious laugh*
 		}
 		
 		else if (introState == State.panel6) {
-			GUI.Label (new Rect(0, 30, 150, 20), "Let the best patch win");
-			//picture of patch holding a trophy
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel6, ScaleMode.StretchToFill);
 			//cheers and whoops
 		}
 		
