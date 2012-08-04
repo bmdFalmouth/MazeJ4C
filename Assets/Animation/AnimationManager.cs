@@ -48,6 +48,18 @@ public class AnimationManager : MonoBehaviour {
 		animationController.rowCount=currentAnimation.rowCount;		
 	}
 	
+	public void PlayAnimation(int index)
+	{
+		if (index<animations.Length-1)
+		{
+			currentAnimation=animations[index];
+			renderer.material.mainTexture=currentAnimation.currentTexture;
+			animationController.framesPerSecond=currentAnimation.FPS;
+			animationController.columnCount=currentAnimation.columnCount;
+			animationController.rowCount=currentAnimation.rowCount;	
+		}
+	}
+	
 	public TextureAnimation FindAnimation(string name)
 	{
 		for(int i=0;i<animations.Length;i++)
