@@ -3,7 +3,7 @@ var Template : UnityEngine.Transform;
  var playerIndex : int;
 function Start () 
 {
-	playerIndex = 1;
+
 }
 
 function Update () 
@@ -13,11 +13,7 @@ function Update ()
 
 function OnNetworkLoadedLevel()
 {
-	if(playerIndex == 1)
-	{
-		Network.Instantiate(Template, transform.position, transform.rotation,0);
-		playerIndex++;
-	}
+	Network.Instantiate(Template, transform.position, transform.rotation,0);
 }
 
 function OnPlayerDisconnected(player : NetworkPlayer)
