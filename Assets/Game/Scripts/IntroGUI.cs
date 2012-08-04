@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class IntroGUI : MonoBehaviour {
@@ -130,3 +130,4 @@ public class IntroGUI : MonoBehaviour {
 		}
 	}
 }
+*/
