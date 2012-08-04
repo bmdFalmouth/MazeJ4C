@@ -21,25 +21,25 @@ public class Controls : MonoBehaviour
 		{
 			if(GUI.Button(new Rect(20,100,50,50), "up"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Up",PlayerID);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Up",Network.player.ToString());
 			}
 				
 			if(GUI.Button(new Rect(20,160,50,50), "down"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Down",PlayerID);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Down",Network.player.ToString());
 			}
 			
 			if(GUI.Button(new Rect(20,210,50,50), "left"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",PlayerID);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",Network.player.ToString());
 			}
 			
 			if(GUI.Button(new Rect(20,260,50,50), "right"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Right",PlayerID);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Right",Network.player.ToString());
 			}
 		
-			GUI.Label(new Rect(100,500,200,200),PlayerID.ToString());
+			GUI.Label(new Rect(100,500,200,200),Network.player.ToString());
 		}
 	}
 }
