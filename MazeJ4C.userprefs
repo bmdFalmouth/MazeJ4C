@@ -1,13 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game\Scripts\Exit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Networking/Instantiate.js">
     <Files>
-      <File FileName="Assets\Game\Scripts\SupportGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game\Scripts\GameGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game\Scripts\SupportCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game\Scripts\Pickup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game\Scripts\Exit.cs" Line="19" Column="4" />
+      <File FileName="Assets/Game/Scripts/Player.cs" Line="36" Column="3" />
+      <File FileName="Assets/Game/Scripts/Networking/ConnectionGUI.js" Line="30" Column="4" />
+      <File FileName="Assets/Game/Scripts/Networking/Instantiate.js" Line="23" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
