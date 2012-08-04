@@ -8,15 +8,18 @@ public class IntroGUI : MonoBehaviour {
 	
 	enum State {
 		
-		scene1,
-		scene2,
-		scene3,
-		scene4,
-		scene5,
-		scene6
+		titleScreen,
+		storyScreen,
+		panel1,
+		panel2,
+		panel3,
+		panel4,
+		panel5,
+		panel6,
+		tutorialScreen2
 	};
 	
-	private State introState = State.scene1;
+	private State introState = State.titleScreen;
 	
 	// Use this for initialization
 	void Start () {
@@ -29,24 +32,43 @@ public class IntroGUI : MonoBehaviour {
 		
 		switch (introState) {
 		
-		case State.scene1:
-			//draw scene 1
+		case State.titleScreen:
+			//draw title screen
+			
+			//play sniffing sound
+			
+			if (Input.GetKeyDown ("space")) {
+				introState = State.storyScreen;
+			}
+			
+		case State.storyScreen:
+			//display story text
+			
+			//image of Patch on the right
+			
+		case State.panel1:
+			//you are
+			//play ping sound & display picture of patch
+			//P.A.T.C.H
 			
 			if (currentTime - startTime > 8) {
-				introState = State.scene2;
+				introState = State.panel2;
 			}
 			return;
 			
-		case State.scene2:
-			//draw scene 2
+		case State.panel2:
+			//"you want to be the best"
+			//star appears behind patch, applause sound
 			
 			if (currentTime - startTime > 8) {
-				introState = State.scene3;
+				introState = State.panel3;
 			}
 			return;
 			
-		case State.scene3:
-			//draw scene 3
+		case State.panel3:
+			//"By finding hidden treasure"
+			//picture of chest and mound & *oooh* sound effect
+			//"what is it?" < across bottom right corner
 			
 			if (currentTime - startTime > 8) {
 				 introState = State.scene4;
@@ -54,15 +76,19 @@ public class IntroGUI : MonoBehaviour {
 			return;
 			
 		case State.scene4:
-			//draw scene 4
+			//"your friends can help"
+			//arrow directing patch towards chest
+			//ping sound
 			
 			if (currentTime - startTime > 8) {
-				introState = State.scene5;
+				introState = State.panel5;
 			}
 			return;
 			
-		case State.scene5:
-			//draw scene 5
+		case State.panel5:
+			//"Hinder"
+			//Same as above, but arrow pointing away
+			//*mischievious laugh*
 			
 			if (currentTime - startTime > 8) {
 				introState = State.scene6;
@@ -70,13 +96,37 @@ public class IntroGUI : MonoBehaviour {
 			return;
 			
 		case State.scene6:
-			//draw scene 6
+			//"Let the best patch win"
+			//picture of patch holding a trophy
+			//cheers and whoops
 			
 			if (currentTime - startTime > 8) {
-				//Intro finished
+				introState = State.tutorialScreen2;
 			}
 			return;
 			
+		case State.tutorialScreen2:
+			//"you control patch with the arrow keys
+			//arrows appear
+			//"your 'friends' direct you with theirs"
+			//"If anyone leaves the game, their store is shared with other players
+			//Time is limited
+			//"good luck!
+			
+			if (currentTime - startTime > 8) {
+				//start game
+			}
+		}
+	}
+	
+	void OnGUI() {
+		if (introState == State.storyScreen) {
+			if (GUI.Button (new Rect(20, 80, 100, 50), "How to play")) {
+				introState = State.panel1;
+			}
+			if (GUI.Button (new Rect(140, 80, 100, 50), "	Sniff it Out")) {
+				//start game
+			}
 		}
 	}
 }
