@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> b0782aca8eb64c16c666c5ea58f2f7a0ee50f179
->>>>>>> 410de801398b75e093d5abad68b667654bd33e58
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench />
@@ -13,42 +5,4 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Network Test V3
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Networking/Instantiate.js">
-    <Files>
-      <File FileName="Assets/Game/Scripts/Player.cs" Line="19" Column="59" />
-      <File FileName="Assets/Game/Scripts/Networking/ConnectionGUI.js" Line="31" Column="28" />
-      <File FileName="Assets/Game/Scripts/Networking/Instantiate.js" Line="19" Column="17" />
-      <File FileName="Assets/Game/Scripts/Networking/Controls.cs" Line="1" Column="1" />
-      <File FileName="Assets/Game/Scripts/Networking/GameConnectionGUI.js" Line="60" Column="2" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-=======
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
->>>>>>> 97c767be637fe46e08f0bef1e0bac8c8dc9e6419
->>>>>>> a13838362ca32edf623b0f017c64c1555f7cd9db
-=======
->>>>>>> Network Test V3
->>>>>>> b0782aca8eb64c16c666c5ea58f2f7a0ee50f179
->>>>>>> 410de801398b75e093d5abad68b667654bd33e58
 </Properties>
