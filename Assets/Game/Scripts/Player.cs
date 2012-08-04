@@ -22,6 +22,5 @@ public class Player : MonoBehaviour {
 		spotPosUpdate.x=transform.position.x;
 		spotPosUpdate.z=transform.position.z;
 		spotLightTransform.position=spotPosUpdate;
-		
 	}
 }
