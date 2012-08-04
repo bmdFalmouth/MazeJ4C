@@ -10,6 +10,7 @@ public class Controls : MonoBehaviour
 	void Start () 
 	{
 		PlayerID = Network.connections.Length;
+		PlayerID++;
 	}
 	
 	// Update is called once per frame
