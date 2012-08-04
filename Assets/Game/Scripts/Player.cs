@@ -27,10 +27,8 @@ public class Player : MonoBehaviour
 	public ArrowState arrowState;
 	
 
-	// Use this for initialization
 	void Start () 
 	{
-		//Remember to add in code to check for audiosource
 		spotLightTransform = GameObject.Find("Spotlight").transform;
 		arrowState=ArrowState.None;
 		leftArrow=GameObject.Find("Arrows/leftArrow");
@@ -38,11 +36,8 @@ public class Player : MonoBehaviour
 		upArrow=GameObject.Find("Arrows/upArrow");
 		downArrow=GameObject.Find("Arrows/downArrow");
 	}
-	
-	// Update is called once per frame
 	void Update () 
 	{
-		//have to play the character audio here!!!
 		
 		rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
 		rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
@@ -55,12 +50,8 @@ public class Player : MonoBehaviour
 				this.gameObject.GetComponent<AudioSource>().clip = stepTwo;
 			this.gameObject.GetComponent<AudioSource>().Play();
 		}
-
-		Vector3 spotPosUpdate=spotLightTransform.position;
-		spotPosUpdate.x=transform.position.x;
-		spotPosUpdate.z=transform.position.z;
-		spotLightTransform.position=spotPosUpdate;
 		
+<<<<<<< HEAD
 		
 		UpdateArrowStates();	
 	}
@@ -113,6 +104,17 @@ public class Player : MonoBehaviour
 		}
 	}
 
+=======
+		if(spotLightTransform != null)
+		{
+			Vector3 spotPosUpdate=spotLightTransform.position;
+			spotPosUpdate.x=transform.position.x;
+			spotPosUpdate.z=transform.position.z;
+			spotLightTransform.position=spotPosUpdate;
+		}
+		
+	}
+>>>>>>> Thingys
 	
 	void OnGUI()
 	{
