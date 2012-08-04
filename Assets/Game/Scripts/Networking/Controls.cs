@@ -21,22 +21,27 @@ public class Controls : MonoBehaviour
 		{
 			if(GUI.Button(new Rect(20,100,50,50), "up"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Up",Network.player.ToString());
+				//GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Up",Network.player.ToString());
+				this.gameObject.GetComponent<NetworkView>().RPC("GetVote",RPCMode.Server,Network.player.ToString(),"Up");
 			}
 				
 			if(GUI.Button(new Rect(20,160,50,50), "down"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Down",Network.player.ToString());
+			//	GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Down",Network.player.ToString());
+				
+				this.gameObject.GetComponent<NetworkView>().RPC("GetVote",RPCMode.Server,Network.player.ToString(),"Down");
 			}
 			
 			if(GUI.Button(new Rect(20,210,50,50), "left"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",Network.player.ToString());
+			//	GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",Network.player.ToString());
+				this.gameObject.GetComponent<NetworkView>().RPC("GetVote",RPCMode.Server,Network.player.ToString(),"Left");
 			}
 			
 			if(GUI.Button(new Rect(20,260,50,50), "right"))
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Right",Network.player.ToString());
+			// GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Right",Network.player.ToString());
+				this.gameObject.GetComponent<NetworkView>().RPC("GetVote",RPCMode.Server,Network.player.ToString(),"Right");
 			}
 		
 			GUI.Label(new Rect(100,500,200,200),Network.player.ToString());
