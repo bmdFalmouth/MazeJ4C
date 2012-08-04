@@ -16,7 +16,18 @@ public class SupportGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown ("up")) {
+			
+		}
+		if (Input.GetKeyDown ("dowm")) {
+			
+		}
+		if (Input.GetKeyDown("left")) {
+			
+		}
+		if (Input.GetKeyDown ("right")) {
+			
+		}
 	}
 	
 	void OnGUI() {

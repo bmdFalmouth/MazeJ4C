@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Pickup : MonoBehaviour {
 	
+	public AudioClip soundEffect;
 	public int scoreValue = 5;
 	
 	// Use this for initialization

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
+public class MenuGUI : MonoBehaviour {
 	
 	
 	static public Texture2D playerAvatar;	
