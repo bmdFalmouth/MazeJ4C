@@ -1,24 +1,18 @@
-<<<<<<< HEAD
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-=======
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Networking/Instantiate.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game\Scripts\VoteScreenGUI.cs">
     <Files>
-      <File FileName="Assets/Game/Scripts/Player.cs" Line="36" Column="3" />
-      <File FileName="Assets/Game/Scripts/Networking/ConnectionGUI.js" Line="30" Column="4" />
-      <File FileName="Assets/Game/Scripts/Networking/Instantiate.js" Line="23" Column="2" />
+      <File FileName="Assets\Game\Scripts\SupportGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game\Scripts\VoteScreenGUI.cs" Line="10" Column="15" />
+      <File FileName="Assets\Game\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game\Scripts\GameGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game\Scripts\Pickup.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game\Scripts\ScoreScreenGUI.cs" Line="16" Column="36" />
+      <File FileName="Assets\Game\Scripts\Exit.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
->>>>>>> 97c767be637fe46e08f0bef1e0bac8c8dc9e6419
 </Properties>
