@@ -35,6 +35,7 @@ public class MenuGUI : MonoBehaviour {
 		
 		if (name.Equals(string.Empty) || selectedAvatar < 0) {
 			GUI.Box (new Rect(30, 150, 100, 50), "");
+			GUI.Box (new Rect(150, 150, 100, 50), "");
 		}
 		else {
 			if (GUI.Button (new Rect(30, 150, 100, 50), "Client")) {
