@@ -6,6 +6,7 @@ public class IntroGUI : MonoBehaviour {
 	public Texture2D titleCard;
 	public Texture2D panel1;
 	public Texture2D panel2;
+	public Texture2D panel3;
 	private float startTime = 0.0f;
 	private float currentTime = 0.0f;
 	private const int timeOut = 3;
@@ -124,9 +125,8 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.panel3) {
-			GUI.Label (new Rect(0, 30 ,150 ,20), "By finding hidden treasure");
-			//picture of chest & mound *oooh* sound effect
-			GUI.Label (new Rect(0, Screen.height - 50, 100, 20), "What is it?");
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel3, ScaleMode.StretchToFill);
+			//*oooh* sound effect
 		}
 		
 		else if (introState == State.panel4) {
