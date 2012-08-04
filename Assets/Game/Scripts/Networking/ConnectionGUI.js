@@ -6,6 +6,11 @@ var useNAT = false;
 var yourIP = "";
 var yourPort = "";
 
+function Awake()
+{
+	DontDestroyOnLoad(this.gameObject);
+}
+
 function Start () 
 {
 
@@ -56,11 +61,5 @@ function OnGUI()
 function OnConnectedToServer()
 {
     for (var go : GameObject in FindObjectsOfType(GameObject))
-           go.SendMessage("OnNetworkLoadedLevel", SendMessageOptions.DontRequireReceiver);
-}
-
-
-function OnDisconnectedFromServer(info : NetworkDisconnection) 
-{
-	Application.LoadLevel("ScoreScreen");
+	    go.SendMessage("OnNetworkLoadedLevel", SendMessageOptions.DontRequireReceiver);
 }

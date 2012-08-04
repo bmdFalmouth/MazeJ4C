@@ -22,8 +22,8 @@ public class Controls : MonoBehaviour
 	void OnGUI()
 	{
 		if(Network.isClient)
-		{
-			if(GUI.Button(new Rect(20,100,50,50), "up"))
+		{			
+			if(GUI.Button(new Rect(20,110,50,50), "up"))
 			{
 				x = 0;
 			}
@@ -37,12 +37,14 @@ public class Controls : MonoBehaviour
 			{
 				x = 3;
 			}
-			GUI.Label(new Rect(100,500,200,200),x.ToString());
+			
 			
 			if(GUI.Button(new Rect(20,210,50,50), "left"))
 			{
 				x = 2;
 			}
+			
+			GUI.Label(new Rect(100,500,200,200),Network.player.ToString());
 		}
 	}
 	
@@ -57,9 +59,29 @@ public class Controls : MonoBehaviour
 		{
 			stream.Serialize(ref x);
 			if (x<10){
-				player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-				player.arrowState=(Player.ArrowState)x;
+				
+				switch(info.sender.ToString())
+				{
+					case "1":
+					player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+					player.arrowState1 = (Player.ArrowState)x;
+					break;
+					case "2":
+					player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+					player.arrowState2 = (Player.ArrowState)x;
+					break;
+					case "3":
+					player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+					player.arrowState3 = (Player.ArrowState)x;
+					break;
+				}
 			}
 		}
 	}
+	
+	 void OnDisconnectedFromServer(NetworkDisconnection info) 
+	{
+        if (Network.isClient)
+            Application.LoadLevel("ScoreScreen");
+    }
 }
