@@ -33,11 +33,7 @@ public class Controls : MonoBehaviour
 				x = 1;
 			}
 			
-			if(GUI.Button(new Rect(20,210,50,50), "left"))
-			{
-			//	GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",Network.player.ToString());
-				x = 2;
-			}
+			
 			
 			if(GUI.Button(new Rect(20,260,50,50), "right"))
 			{
@@ -47,6 +43,12 @@ public class Controls : MonoBehaviour
 			GUI.Label(new Rect(100,500,200,200),x.ToString());
 			
 		}
+		
+		if(GUI.Button(new Rect(20,210,50,50), "left"))
+			{
+			//	GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GetVote("Left",Network.player.ToString());
+				x = 2;
+			}
 	
 	}
 	
