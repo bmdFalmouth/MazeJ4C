@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1a6c7d7aa46eed89a0210366449771a5eef14646
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench />
@@ -5,4 +9,24 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
+=======
+=======
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Networking/Instantiate.js">
+    <Files>
+      <File FileName="Assets/Game/Scripts/Player.cs" Line="46" Column="2" />
+      <File FileName="Assets/Game/Scripts/Networking/ConnectionGUI.js" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Networking/Instantiate.js" Line="18" Column="32" />
+      <File FileName="Assets/Game/Scripts/Networking/Controls.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Networking/GameConnectionGUI.js" Line="60" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+>>>>>>> b50091824d9ca167b33b10dd3687af0c7765cef2
+>>>>>>> 1a6c7d7aa46eed89a0210366449771a5eef14646
 </Properties>
