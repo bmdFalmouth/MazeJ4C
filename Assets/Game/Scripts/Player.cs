@@ -9,12 +9,34 @@ public class Player : MonoBehaviour
 	public AudioClip stepOne;
 	public AudioClip stepTwo;
 	bool leftRight = false;
+	
+	public GameObject leftArrow;
+	public GameObject rightArrow;
+	public GameObject upArrow;
+	public GameObject downArrow;
+	
+	public enum ArrowState
+	{
+		Up,
+		Down,
+		Left,
+		Right,
+		None=10,
+	};
+	
+	public ArrowState arrowState;
+	
 
 	// Use this for initialization
 	void Start () 
 	{
 		//Remember to add in code to check for audiosource
 		spotLightTransform = GameObject.Find("Spotlight").transform;
+		arrowState=ArrowState.None;
+		leftArrow=GameObject.Find("Arrows/leftArrow");
+		rightArrow=GameObject.Find("Arrows/rightArrow");
+		upArrow=GameObject.Find("Arrows/upArrow");
+		downArrow=GameObject.Find("Arrows/downArrow");
 	}
 	
 	// Update is called once per frame
@@ -39,17 +61,58 @@ public class Player : MonoBehaviour
 		spotPosUpdate.z=transform.position.z;
 		spotLightTransform.position=spotPosUpdate;
 		
+		
+		UpdateArrowStates();	
 	}
 	
-	/*public void GetVote(string vote, int ID)
+	void HideAllArrows()
 	{
-		switch(ID)
+		leftArrow.active=false;
+		rightArrow.active=false;
+		upArrow.active=false;
+		downArrow.active=false;				
+	}
+	
+	void UpdateArrowStates()
+	{
+		switch(arrowState)
 		{
-			case 2:
-			support2Vote = vote;
-			break;
+			case ArrowState.None:
+			{
+				HideAllArrows();	
+				break;
+			}
+			
+			case ArrowState.Left:
+			{
+				HideAllArrows();
+				leftArrow.active=true;
+				break;
+			}
+			
+			case ArrowState.Right:
+			{
+				HideAllArrows();
+				rightArrow.active=true;
+				break;
+			}
+			
+			case ArrowState.Up:
+			{
+				HideAllArrows();
+				upArrow.active=true;
+				break;
+			}	
+			
+			case ArrowState.Down:
+			{
+				HideAllArrows();
+				downArrow.active=true;	
+				break;
+			}			
 		}
-	}*/
+	}
+
 	
 	void OnGUI()
 	{
@@ -58,21 +121,4 @@ public class Player : MonoBehaviour
 		foreach(GameObject support in GameObject.FindGameObjectsWithTag("Support"))
 			GUI.Label(new Rect(500,700,100,100), support.GetComponent<Controls>().x.ToString());
 	}
-	
-	//[RPC]
-	/*void GetVote()
-	{
-		int x = 0;
-	}*/
-	
-	/*
-	void GetVote(string ID, string vote)
-	{
-		switch(ID)
-		{
-			case "1":
-			support2Vote = vote;
-			break;
-		}
-	}*/
 }

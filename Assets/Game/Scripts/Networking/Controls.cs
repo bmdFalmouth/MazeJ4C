@@ -4,10 +4,13 @@ using System.Collections;
 public class Controls : MonoBehaviour 
 {
 	public int x = -1;
+	private Player player;
 	// Use this for initialization
 	void Start () 
 	{
 		this.gameObject.GetComponent<NetworkView>().observed = this.gameObject.GetComponent<Controls>();	
+		
+		
 	}
 	
 	// Update is called once per frame
@@ -62,6 +65,10 @@ public class Controls : MonoBehaviour
 		else
 		{
 			stream.Serialize(ref x);
+			if (x<10){
+				player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+				player.arrowState=(Player.ArrowState)x;
+			}
 		}
 	}
 }
