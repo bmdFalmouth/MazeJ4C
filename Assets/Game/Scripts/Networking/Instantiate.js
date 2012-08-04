@@ -1,6 +1,8 @@
 #pragma strict
 var Template : UnityEngine.Transform; 
- var playerIndex : int;
+var Support : UnityEngine.Transform; 
+var playerIndex : int;
+
 function Start () 
 {
 
@@ -16,7 +18,10 @@ function OnNetworkLoadedLevel()
 	if(Network.connections.Length == 0)
 		Network.Instantiate(Template, transform.position, transform.rotation,0);
 	else
-		Debug.Log("P2 Connected");
+	{
+		Network.Instantiate(Support, transform.position, transform.rotation,0);
+		GameObject.Find("pf_Network_GamePlayer(clone)").rigidbody.active = false;
+	}
 }
 
 function OnPlayerDisconnected(player : NetworkPlayer)

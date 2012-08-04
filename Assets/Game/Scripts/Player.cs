@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour 
 {
-	
+	public string support2Vote = "";
 	public float speed=10.0f;
 	public Transform spotLightTransform;
 	public AudioClip stepOne;
@@ -34,13 +34,45 @@ public class Player : MonoBehaviour
 			this.gameObject.GetComponent<AudioSource>().Play();
 		}
 
-		
-		
-		
 		Vector3 spotPosUpdate=spotLightTransform.position;
 		spotPosUpdate.x=transform.position.x;
 		spotPosUpdate.z=transform.position.z;
 		spotLightTransform.position=spotPosUpdate;
 		
 	}
+	
+	/*public void GetVote(string vote, int ID)
+	{
+		switch(ID)
+		{
+			case 2:
+			support2Vote = vote;
+			break;
+		}
+	}*/
+	
+	void OnGUI()
+	{
+		GUI.Label(new Rect(500,500,100,100), support2Vote);
+		
+		foreach(GameObject support in GameObject.FindGameObjectsWithTag("Support"))
+			GUI.Label(new Rect(500,700,100,100), support.GetComponent<Controls>().x.ToString());
+	}
+	
+	//[RPC]
+	/*void GetVote()
+	{
+		int x = 0;
+	}*/
+	
+	/*
+	void GetVote(string ID, string vote)
+	{
+		switch(ID)
+		{
+			case "1":
+			support2Vote = vote;
+			break;
+		}
+	}*/
 }
