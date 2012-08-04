@@ -53,6 +53,6 @@ public class Player : MonoBehaviour
 	
 	void OnGUI()
 	{
-		GUI.Label(new Rect(500,500,100,100), support2Vote);
+		GUI.Label(new Rect(500,500,100,100),support2Vote);
 	}
 }
