@@ -15,7 +15,7 @@ public class Exit : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag.Equals("Player")) {
-			Application.LoadLevel("ScoreScreen");
+			Application.LoadLevel("VoteScreen");
 			Debug.Log ("Exit");
 		}
 	}
