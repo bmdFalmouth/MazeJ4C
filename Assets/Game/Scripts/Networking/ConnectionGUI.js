@@ -1,5 +1,5 @@
 #pragma strict
-var remoteIP = "127.0.0.1";
+var remoteIP = "10.39.70.175";
 var remotePort = 25000;
 var listenPort = 25000;
 var useNAT = false;
@@ -29,7 +29,7 @@ function OnGUI()
 		if(GUI.Button(new Rect(10,50,100,30),"Start Server"))
 		{
 			Network.useNat = useNAT;
-			Network.InitializeServer(32,listenPort);
+			Network.InitializeServer(4,listenPort);
 			
 			for (var go : GameObject in FindObjectsOfType(GameObject))
   			 {
@@ -57,4 +57,10 @@ function OnConnectedToServer()
 {
     for (var go : GameObject in FindObjectsOfType(GameObject))
            go.SendMessage("OnNetworkLoadedLevel", SendMessageOptions.DontRequireReceiver);
+}
+
+
+function OnDisconnectedFromServer(info : NetworkDisconnection) 
+{
+	Application.LoadLevel("ScoreScreen");
 }

@@ -13,8 +13,18 @@ public class Exit : MonoBehaviour {
 	
 	}
 	
-	void OnTriggerEnter(Collider other) {
-		if (other.tag.Equals("Player")) {
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.tag.Equals("Player")) 
+		{
+			if(Network.isServer)
+			{
+				foreach(NetworkPlayer player in Network.connections)
+				{
+					Network.CloseConnection(player, true);
+				}
+			}
+			//Network.CloseConnection(
 			Application.LoadLevel("VoteScreen");
 			Debug.Log ("Exit");
 		}

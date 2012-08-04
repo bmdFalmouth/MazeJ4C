@@ -42,17 +42,18 @@ public class Player : MonoBehaviour
 		rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
 		rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
 		
-		if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
+		if(Network.isServer)
 		{
-			if(leftRight)
-				this.gameObject.GetComponent<AudioSource>().clip = stepOne;
-			else
-				this.gameObject.GetComponent<AudioSource>().clip = stepTwo;
-			this.gameObject.GetComponent<AudioSource>().Play();
+		
+			if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
+			{
+				if(leftRight)
+					this.gameObject.GetComponent<AudioSource>().clip = stepOne;
+				else
+					this.gameObject.GetComponent<AudioSource>().clip = stepTwo;
+				this.gameObject.GetComponent<AudioSource>().Play();
+			}
 		}
-		
-<<<<<<< HEAD
-		
 		UpdateArrowStates();	
 	}
 	
@@ -102,9 +103,7 @@ public class Player : MonoBehaviour
 				break;
 			}			
 		}
-	}
 
-=======
 		if(spotLightTransform != null)
 		{
 			Vector3 spotPosUpdate=spotLightTransform.position;
@@ -114,7 +113,6 @@ public class Player : MonoBehaviour
 		}
 		
 	}
->>>>>>> Thingys
 	
 	void OnGUI()
 	{
