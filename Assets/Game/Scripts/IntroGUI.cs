@@ -37,6 +37,7 @@ public class IntroGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		currentTime += Time.deltaTime;
 		
 		switch (introState) {
@@ -148,13 +149,13 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.tutorialScreen2) {
-			
-			GUI.Label (new Rect(0, 30, 250, 20), "You control patch with the arrow keys");
+			GUI.color = Color.black;
+			GUI.Label (new Rect(Screen.width / 2 - 96, 30, 250, 20), "You control patch with the arrow keys");
 			//arrows appear
-			GUI.Label (new Rect(0, 60, 250, 20), "Your \"friends\" direct you with theirs");
-			GUI.Label (new Rect(0, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
-			GUI.Label (new Rect(0, 180, 150, 20), "Time is limited");
-			GUI.Label (new Rect(0, 210, 100, 20), "Good luck");
+			GUI.Label (new Rect(Screen.width / 2 - 89, 60, 250, 20), "Your \"friends\" direct you with theirs");
+			GUI.Label (new Rect(Screen.width / 2 - 155, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
+			GUI.Label (new Rect(Screen.width / 2 - 19, 180, 150, 20), "Time is limited");
+			GUI.Label (new Rect(Screen.width / 2 - 10, 210, 100, 20), "Good luck");
 			
 			if (GUI.Button (new Rect(Screen.width / 2 - 50, Screen.height - 60, 100, 50), "Continue")) {
 				Application.LoadLevel ("MainMenu");

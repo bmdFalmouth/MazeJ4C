@@ -64,10 +64,10 @@ public class Player : MonoBehaviour
 			this.gameObject.GetComponent<AudioSource>().Play();
 		}
 
-		//Vector3 spotPosUpdate=spotLightTransform.position;
-		//spotPosUpdate.x=transform.position.x;
-		//spotPosUpdate.z=transform.position.z;
-		//spotLightTransform.position=spotPosUpdate;
+		Vector3 spotPosUpdate=spotLightTransform.position;
+		spotPosUpdate.x=transform.position.x;
+		spotPosUpdate.z=transform.position.z;
+		spotLightTransform.position=spotPosUpdate;
 		
 		
 		UpdateArrowStates();	
