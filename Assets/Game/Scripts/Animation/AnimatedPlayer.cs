@@ -15,7 +15,7 @@ public class AnimatedPlayer : MonoBehaviour {
 		walkRight
 	};
 	
-	public OTAnimatingSprite animatedSprite;              // gun sprite reference
+	public AnimationManager animatedManager;
 	public AnimationState animationState=AnimationState.idleFront;
 	public float idleTime=0.5f;
 	public float currentIdleTime=0.0f;
@@ -98,42 +98,42 @@ public class AnimatedPlayer : MonoBehaviour {
 		{
 			case AnimationState.idleFront:
 			{
-				animatedSprite.Play("idleFront");
+				animatedManager.PlayAnimation("IdleFront");
 				break;
 			}
 			case AnimationState.idleBack:
 			{
-				animatedSprite.Play("idleBack");
+				animatedManager.PlayAnimation("IdleBack");
 				break;
 			}
 			case AnimationState.idleLeft:
 			{
-				animatedSprite.Play("idleLeft");
+				animatedManager.PlayAnimation("IdleLeft");
 				break;
 			}			
 			case AnimationState.idleRight:
 			{
-				animatedSprite.Play("idleRight");
+				animatedManager.PlayAnimation("IdleRight");
 				break;
 			}	
 			case AnimationState.walkFront:
 			{
-				animatedSprite.Play("walkFront");
+				animatedManager.PlayAnimation("WalkFront");
 				break;
 			}
 			case AnimationState.walkBack:
 			{
-				animatedSprite.Play("walkBack");
+				animatedManager.PlayAnimation("WalkBack");
 				break;
 			}
 			case AnimationState.walkLeft:
 			{
-				animatedSprite.Play("walkLeft");
+				animatedManager.PlayAnimation("WalkLeft");
 				break;
 			}			
 			case AnimationState.walkRight:
 			{
-				animatedSprite.Play("walkRight");
+				animatedManager.PlayAnimation("WalkRight");
 				break;
 			}				
 		}		

@@ -22,9 +22,11 @@ public class MenuGUI : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		GUI.Label (new Rect(30, 20, 250, 20), "Please enter your name, and choose an avatar");
+		GUI.color = Color.black;
+		GUI.Label (new Rect(30, 20, 300, 20), "Please enter your name, and choose an avatar");
 		name = GUI.TextArea (new Rect(30, 50, 150, 20), name);
 		for (int i = 0; i < 8; i++) {
+			GUI.color = Color.white;
 			if (GUI.Button (new Rect(30 + 60 * i, 80, 50, 50), avatar[i])) {
 				selectedAvatar = i;
 			}
@@ -38,6 +40,7 @@ public class MenuGUI : MonoBehaviour {
 			GUI.Box (new Rect(150, 150, 100, 50), "");
 		}
 		else {
+			GUI.color = Color.black;
 			if (GUI.Button (new Rect(30, 150, 100, 50), "Client")) {
 				playerAvatar = avatar[selectedAvatar];
 				playerName = name;
@@ -55,6 +58,7 @@ public class MenuGUI : MonoBehaviour {
 //			//start game
 		}
 		
+		GUI.color = Color.black;
 		if (GUI.Button (new Rect(270, 150, 100, 50), "Exit")) {
 			Application.Quit();
 		}

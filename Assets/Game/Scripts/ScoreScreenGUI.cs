@@ -19,6 +19,7 @@ public class ScoreScreenGUI : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+		GUI.color = Color.white;
 		GUI.Label (new Rect(30, 30, 64, 64), MenuGUI.playerAvatar);
 		GUI.Label (new Rect(35, 10, 50, 20), MenuGUI.playerName);
 		GUI.Label (new Rect(100, 42, 100, 20), "Score: " + GameSettings.leadScore.ToString());
@@ -31,7 +32,16 @@ public class ScoreScreenGUI : MonoBehaviour {
 		
 		GUI.Label (new Rect(30, 312, 64, 64), avatar4);
 		GUI.Label (new Rect(100, 324, 100, 20), "Score: "+ GameSettings.support3Score.ToString());
+		GUI.Label (new Rect(30, 124, 64, 64), avatar2);
+		GUI.Label (new Rect(30, 218, 64, 64), avatar3);
+		GUI.Label (new Rect(30, 312, 64, 64), avatar4);
 		
+		GUI.color = Color.black;
+		GUI.Label (new Rect(35, 10, 50, 20), MenuGUI.playerName);
+		GUI.Label (new Rect(100, 42, 100, 20), "Score: " + GameGUI.score);
+		GUI.Label (new Rect(100, 136, 100, 20), "Score: ");
+		GUI.Label (new Rect(100, 230, 100, 20), "Score: ");
+		GUI.Label (new Rect(100, 324, 100, 20), "Score: ");
 		if (GUI.Button (new Rect(Screen.width - 320, Screen.height - 50, 100, 50), "Continue")) {
 			Application.LoadLevel ("RichLeadNetworkTest");
 		}

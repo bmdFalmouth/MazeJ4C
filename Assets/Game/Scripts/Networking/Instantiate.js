@@ -16,11 +16,11 @@ function Update ()
 function OnNetworkLoadedLevel()
 {
 	if(Network.connections.Length == 0)
-		Network.Instantiate(Template, transform.position, transform.rotation,0);
+		Network.Instantiate(Template, transform.position, Quaternion.AngleAxis(180.0,Vector3.up),0);
 	else
 	{
 		Network.Instantiate(Support, transform.position, transform.rotation,0);
-		GameObject.Find("pf_Network_GamePlayer(clone)").rigidbody.active = false;
+		GameObject.FindGameObjectWithTag("Player").rigidbody.active = false;
 	}
 }
 

@@ -58,9 +58,10 @@ public class Pickup : MonoBehaviour {
 			
 			audio.Play ();
 			
-			GameGUI gameGUI = Camera.main.GetComponent<GameGUI>();
-			gameGUI.score += scoreValue;
+			//GameGUI gameGUI = Camera.main.GetComponent<GameGUI>();
+			GameGUI.score += scoreValue;
 			}
 		}
 	}
 }
+

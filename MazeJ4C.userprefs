@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game\Scripts\Mound.cs">
+    <Files>
+      <File FileName="Assets\Game\Scripts\Mound.cs" Line="35" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/staff/Documents/MazeJ4C/Assets/Game/Scripts/Player.cs" line="319" />
-      <Breakpoint file="/Users/staff/Documents/MazeJ4C/Assets/Game/Scripts/Player.cs" line="307" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

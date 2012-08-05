@@ -4,9 +4,13 @@ using System.Collections;
 public class IntroGUI : MonoBehaviour {
 	
 	public Texture2D titleCard;
+	public Texture2D story;
 	public Texture2D panel1;
 	public Texture2D panel2;
 	public Texture2D panel3;
+	public Texture2D panel4;
+	public Texture2D panel5;
+	public Texture2D panel6;
 	private float startTime = 0.0f;
 	private float currentTime = 0.0f;
 	private const int timeOut = 3;
@@ -33,6 +37,7 @@ public class IntroGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		currentTime += Time.deltaTime;
 		
 		switch (introState) {
@@ -102,14 +107,13 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.storyScreen) {
-			//display story text
-			
-			if (GUI.Button (new Rect(Screen.width / 2 - 110, Screen.height - 70, 100, 50), "How to play")) {
+			GUI.Label (new Rect(Screen.width / 2 - 200, 0, 400, 400), story);
+			if (GUI.Button (new Rect(Screen.width / 2 - 110, 350, 100, 50), "How to play")) {
 				startTime = 0.0f;
 				currentTime = 0.0f;
 				introState = State.panel1;
 			}
-			if (GUI.Button (new Rect(Screen.width / 2 + 110, Screen.height - 70, 100, 50), "Sniff it Out")) {
+			if (GUI.Button (new Rect(Screen.width / 2 + 110, 350, 100, 50), "Sniff it Out")) {
 				Application.LoadLevel ("MainMenu");
 			}
 		}
@@ -130,31 +134,28 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.panel4) {
-			GUI.Label (new Rect(0, 30, 150, 20), "You friends can help");
-			//arrow directing patch towards chest
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel4, ScaleMode.StretchToFill);
 			//ping sound
 		}
 		
 		else if (introState == State.panel5) {
-			GUI.Label (new Rect(0, 30, 100, 20), "Hinder");
-			//Same as above, but arrow pointing away
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel5, ScaleMode.StretchToFill);
 			//*mischievious laugh*
 		}
 		
 		else if (introState == State.panel6) {
-			GUI.Label (new Rect(0, 30, 150, 20), "Let the best patch win");
-			//picture of patch holding a trophy
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel6, ScaleMode.StretchToFill);
 			//cheers and whoops
 		}
 		
 		else if (introState == State.tutorialScreen2) {
-			
-			GUI.Label (new Rect(0, 30, 250, 20), "You control patch with the arrow keys");
+			GUI.color = Color.black;
+			GUI.Label (new Rect(Screen.width / 2 - 96, 30, 250, 20), "You control patch with the arrow keys");
 			//arrows appear
-			GUI.Label (new Rect(0, 60, 250, 20), "Your \"friends\" direct you with theirs");
-			GUI.Label (new Rect(0, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
-			GUI.Label (new Rect(0, 180, 150, 20), "Time is limited");
-			GUI.Label (new Rect(0, 210, 100, 20), "Good luck");
+			GUI.Label (new Rect(Screen.width / 2 - 89, 60, 250, 20), "Your \"friends\" direct you with theirs");
+			GUI.Label (new Rect(Screen.width / 2 - 155, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
+			GUI.Label (new Rect(Screen.width / 2 - 19, 180, 150, 20), "Time is limited");
+			GUI.Label (new Rect(Screen.width / 2 - 10, 210, 100, 20), "Good luck");
 			
 			if (GUI.Button (new Rect(Screen.width / 2 - 50, Screen.height - 60, 100, 50), "Continue")) {
 				Application.LoadLevel ("MainMenu");

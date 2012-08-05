@@ -32,13 +32,14 @@ public class VoteScreenGUI : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+		GUI.color = Color.white;
 		GUI.Label (new Rect(30, 30, 64, 64), avatar1);
-		GUI.Label (new Rect(35, 10, 50, 20), "Player 2");
-		
 		GUI.Label (new Rect(30, 124, 64, 64), avatar2);
-		GUI.Label (new Rect(35, 104, 50, 20), "Player 3");
-		
 		GUI.Label (new Rect(30, 218, 64, 64), avatar3);
+		
+		GUI.color = Color.black;
+		GUI.Label (new Rect(35, 10, 50, 20), "Player 2");
+		GUI.Label (new Rect(35, 104, 50, 20), "Player 3");
 		GUI.Label (new Rect(35, 198, 50, 20), "Player 4");
 		
 		bool positiveVote = false;
@@ -57,6 +58,7 @@ public class VoteScreenGUI : MonoBehaviour {
 			}
 		}
 		
+		GUI.color = Color.white;
 		if (positiveVote) {
 			for (int i = 0; i < 3; i++) {
 				if (player[i] == Vote.positive) {
@@ -117,12 +119,16 @@ public class VoteScreenGUI : MonoBehaviour {
 			}
 		}
 		
+		GUI.color = Color.black;
 		if (positiveVote && neutralVote && negativeVote) {
 			if (GUI.Button (new Rect(30, 288, 100, 50), "Continue")) 
 			{
 				GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreTimer>().GetArray(player);
 				Application.LoadLevel ("ScoreScreen");
 			}
+		}
+		else {
+			GUI.Box (new Rect(30, 288, 100, 50), "");
 		}
 		if (GUI.Button (new Rect(150, 288, 100, 50), "Exit")) {
 			Application.Quit ();

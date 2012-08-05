@@ -5,6 +5,8 @@ public class Mound : MonoBehaviour {
 	
 	public Transform pickup;
 	private bool pickupSpawn=false;
+	public Transform chest;
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +16,7 @@ public class Mound : MonoBehaviour {
 	void Update () {
 	
 	}
+
 	void OnTriggerEnter(Collider other) {
 		if (other.tag.Equals("Player")) {
 			

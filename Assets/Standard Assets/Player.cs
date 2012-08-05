@@ -65,11 +65,13 @@ public class Player : MonoBehaviour
 		DontDestroyOnLoad(this.gameObject);
 		state = State.GAME;
 		this.gameObject.GetComponent<NetworkView>().observed = this.gameObject.GetComponent<Player>();	
+		
 	}
 	
 	void Start () 
 	{
-		spotLightTransform = GameObject.Find("Spotlight").transform;
+		GameObject.Find("Spotlight").transform.parent=transform;
+		Camera.main.transform.parent=transform;
 		arrowState1=ArrowState.None;
 		arrowState2=ArrowState.None;
 		arrowState3=ArrowState.None;
@@ -97,9 +99,12 @@ public class Player : MonoBehaviour
 			case State.GAME:
 				if(Network.isServer)
 				{
-					rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
-					rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
-		
+					//rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
+					//rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
+					
+					rigidbody.AddForce(speed*Input.GetAxis("Vertical")*Vector3.forward);
+					rigidbody.AddForce(speed*Input.GetAxis("Horizontal")*Vector3.right);
+				
 					if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
 					{
 						if(leftRight)
@@ -274,7 +279,8 @@ public class Player : MonoBehaviour
 				break;
 			}			
 		}
-
+		
+		/*
 		if(spotLightTransform != null)
 		{
 			Vector3 spotPosUpdate=spotLightTransform.position;
@@ -282,7 +288,7 @@ public class Player : MonoBehaviour
 			spotPosUpdate.z=transform.position.z;
 			spotLightTransform.position=spotPosUpdate;
 		}
-		
+		*/
 	}
 	
 	void OnGUI()
