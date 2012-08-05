@@ -12,6 +12,7 @@ public class IntroGUI : MonoBehaviour {
 	public Texture2D panel3;
 	public Texture2D panel4;
 	public Texture2D panel5;
+	public AudioClip evilLaugh;
 	public Texture2D panel6;
 	public AudioClip yay;
 	private float startTime = 0.0f;
@@ -150,7 +151,10 @@ public class IntroGUI : MonoBehaviour {
 		
 		else if (introState == State.panel5) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel5, ScaleMode.StretchToFill);
-			//*mischievious laugh*
+			if (!audio.isPlaying) {
+				this.gameObject.GetComponent<AudioSource>().clip = evilLaugh;
+				audio.Play ();
+			}
 		}
 		
 		else if (introState == State.panel6) {
