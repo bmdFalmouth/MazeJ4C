@@ -3,6 +3,12 @@ using System.Collections;
 
 public class IntroGUI : MonoBehaviour {
 	
+	public AudioClip[] clips;		
+	AudioClip randomClip() {
+		return clips[Random.Range (0, clips.GetLength (0) - 1)];
+	}
+	
+	public Texture2D logo;
 	public Texture2D titleCard;
 	public AudioClip sniffing;
 	public Texture2D story;
@@ -20,9 +26,11 @@ public class IntroGUI : MonoBehaviour {
 	private float startTime = 0.0f;
 	private float currentTime = 0.0f;
 	private const int timeOut = 3;
+	bool audioPlayed = false;
 	
 	enum State {
 		
+		logo,
 		titleScreen,
 		storyScreen,
 		panel1,
@@ -34,11 +42,11 @@ public class IntroGUI : MonoBehaviour {
 		tutorialScreen2
 	};
 	
-	private State introState = State.titleScreen;
+	private State introState = State.logo;
 	
 	// Use this for initialization
 	void Start () {
-	
+		Random.seed = (int)Time.deltaTime;
 	}
 	
 	// Update is called once per frame
@@ -48,9 +56,17 @@ public class IntroGUI : MonoBehaviour {
 		
 		switch (introState) {
 		
+		case State.logo:
+			if (Input.GetKeyDown ("space")) {
+				introState = State.titleScreen;
+			}
+			break;
+			
 		case State.titleScreen:
 			if (Input.GetKeyDown ("space")) {
 				introState = State.storyScreen;
+				audioPlayed = false;
+				music.musicSource.volume -= 3;
 			}
 			break;
 			
@@ -59,6 +75,7 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.panel2;
 				startTime = 0.0f;
 				currentTime = 0.0f;
+				audioPlayed = false;
 			}
 			break;
 			
@@ -67,6 +84,7 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.panel3;
 				startTime = 0.0f;
 				currentTime = 0.0f;
+				audioPlayed = false;
 			}
 			break;
 			
@@ -75,6 +93,7 @@ public class IntroGUI : MonoBehaviour {
 				 introState = State.panel4;
 				startTime = 0.0f;
 				currentTime = 0.0f;
+				audioPlayed = false;
 			}
 			break;
 			
@@ -83,6 +102,7 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.panel5;
 				startTime = 0.0f;
 				currentTime = 0.0f;
+				audioPlayed = false;
 			}
 			break;
 			
@@ -91,6 +111,7 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.panel6;
 				startTime = 0.0f;
 				currentTime = 0.0f;
+				audioPlayed = false;
 			}
 			break;
 			
@@ -99,83 +120,130 @@ public class IntroGUI : MonoBehaviour {
 				introState = State.tutorialScreen2;
 				startTime = 0.0f;
 				currentTime = 0.0f;
+				audioPlayed = false;
 			}
 			break;
 		}
 	}
 	
 	void OnGUI() {
-		if (introState == State.titleScreen) {
-			this.gameObject.GetComponent<AudioSource>().clip = sniffing;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+		if (introState == State.logo) {
+			GUI.DrawTexture (new Rect(Screen.width / 2 - 379, Screen.height / 2 - 256, 758, 512), logo);
+			GUI.color = Color.black;
+			GUI.Label (new Rect(Screen.width / 2 - 50, Screen.height - 20, 150, 20), "Press space to continue.");
+		}
+		
+		else if (introState == State.titleScreen) {
+			if (!audioPlayed) {
+				this.gameObject.GetComponent<AudioSource>().clip = sniffing;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
 			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), titleCard, ScaleMode.StretchToFill);
+			GUI.color = Color.white;
 			GUI.Label (new Rect(Screen.width / 2 - 50, Screen.height - 20, 150, 20), "Press space to continue.");
 		}
 		
 		else if (introState == State.storyScreen) {
+			GUI.color = Color.black;
 			GUI.Label (new Rect(Screen.width / 2 - 200, 0, 400, 400), story);
 			if (GUI.Button (new Rect(Screen.width / 2 - 110, 350, 100, 50), "How to play")) {
+				if (!audioPlayed) {
+					audio.Stop ();
+					this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+					audio.Play ();
+					audioPlayed = true;
+				}
+				
 				startTime = 0.0f;
 				currentTime = 0.0f;
 				introState = State.panel1;
 			}
 			if (GUI.Button (new Rect(Screen.width / 2 + 110, 350, 100, 50), "Sniff it Out")) {
+				music.musicSource.volume += 2;
+				
+				if (!audioPlayed) {
+					audio.Stop ();
+					this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+					audio.Play ();
+					audioPlayed = true;
+				}
+				
 				Application.LoadLevel ("MainMenu");
 			}
 		}
 		
 		else if (introState == State.panel1) {
-			this.gameObject.GetComponent<AudioSource>().clip = ping;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			
+			if (!audioPlayed) {
+				audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = ping;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel1, ScaleMode.StretchToFill);
 		}
 		
 		else if (introState == State.panel2) {
-			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel2, ScaleMode.StretchToFill);
+			if (!audioPlayed) {
+				audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = cheer;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
-			this.gameObject.GetComponent<AudioSource>().clip = cheer;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel2, ScaleMode.StretchToFill);
 		}
 		
 		else if (introState == State.panel3) {
-			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel3, ScaleMode.StretchToFill);
+			if (!audioPlayed) {
+				audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = ooo;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
-			this.gameObject.GetComponent<AudioSource>().clip = ooo;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel3, ScaleMode.StretchToFill);
 		}
 		
 		else if (introState == State.panel4) {
-			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel4, ScaleMode.StretchToFill);
+			if (!audioPlayed) {
+				audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = sniffing;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
-			this.gameObject.GetComponent<AudioSource>().clip = sniffing;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel4, ScaleMode.StretchToFill);
 		}
 		
 		else if (introState == State.panel5) {
-			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel5, ScaleMode.StretchToFill);
+			if (!audioPlayed) {
+				audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = evilLaugh;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
-			this.gameObject.GetComponent<AudioSource>().clip = evilLaugh;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel5, ScaleMode.StretchToFill);
 		}
 		
 		else if (introState == State.panel6) {
-			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel6, ScaleMode.StretchToFill);
+			if (!audioPlayed) {
+				audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = yay;
+				audio.Play ();
+				audioPlayed = true;
+			}
 			
-			this.gameObject.GetComponent<AudioSource>().clip = yay;
-			audio.Play ();
-			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel6, ScaleMode.StretchToFill);
 		}
 		
 		else if (introState == State.tutorialScreen2) {
-			GUI.color = Color.black;
+			music.musicSource.volume += 2;
+			
 			GUI.Label (new Rect(Screen.width / 2 - 96, 30, 250, 20), "You control patch with the arrow keys");
 			GUI.Label (new Rect(Screen.width / 2 - 89, 60, 250, 20), "Your \"friends\" direct you with theirs");
 			GUI.Label (new Rect(Screen.width / 2 - 155, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
@@ -183,6 +251,12 @@ public class IntroGUI : MonoBehaviour {
 			GUI.Label (new Rect(Screen.width / 2 - 10, 210, 100, 20), "Good luck");
 			
 			if (GUI.Button (new Rect(Screen.width / 2 - 50, Screen.height - 60, 100, 50), "Continue")) {
+				if (!audioPlayed) {
+					audio.Stop ();
+					this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+					audio.Play ();
+				}
+				
 				Application.LoadLevel ("MainMenu");
 			}
 		}

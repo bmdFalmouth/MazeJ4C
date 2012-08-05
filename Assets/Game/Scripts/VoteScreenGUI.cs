@@ -3,6 +3,11 @@ using System.Collections;
 
 public class VoteScreenGUI : MonoBehaviour {
 	
+	public AudioClip[] clips;		
+	AudioClip randomClip() {
+		return clips[Random.Range (0, clips.GetLength (0) - 1)];
+	}
+	
 	public Texture2D avatar1;
 	public Texture2D avatar2;
 	public Texture2D avatar3;
@@ -63,6 +68,11 @@ public class VoteScreenGUI : MonoBehaviour {
 			for (int i = 0; i < 3; i++) {
 				if (player[i] == Vote.positive) {
 					if (GUI.Button (new Rect(100, 30 + 94 * i, 50, 50), tickImage)) {
+						if (audio.isPlaying)
+							audio.Stop ();
+						this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+						audio.Play ();
+						
 						player[i] = Vote.noVote;
 					}
 				}
@@ -74,6 +84,11 @@ public class VoteScreenGUI : MonoBehaviour {
 		else {
 			for (int i = 0; i < 3; i++) {
 				if (GUI.Button (new Rect(100, 30 + 94 * i, 50, 50), positiveImage)) {
+					if (audio.isPlaying)
+						audio.Stop ();
+					this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+					audio.Play ();
+					
 					player[i] = Vote.positive;
 				}
 			}
@@ -83,6 +98,11 @@ public class VoteScreenGUI : MonoBehaviour {
 			for (int i = 0; i < 3; i++) {
 				if (player[i] == Vote.neutral) {
 					if (GUI.Button (new Rect(170, 30 + 94 * i, 50, 50), tickImage)) {
+						if (audio.isPlaying)
+							audio.Stop ();
+						this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+						audio.Play ();
+						
 						player[i] = Vote.noVote;
 					}
 				}
@@ -94,6 +114,11 @@ public class VoteScreenGUI : MonoBehaviour {
 		else {
 			for (int i = 0; i < 3; i++) {
 				if (GUI.Button (new Rect(170, 30 + 94 * i, 50, 50), neutralImage)) {
+					if (audio.isPlaying)
+						audio.Stop ();
+					this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+					audio.Play ();
+					
 					player[i] = Vote.neutral;
 				}
 			}
@@ -103,6 +128,11 @@ public class VoteScreenGUI : MonoBehaviour {
 			for (int i = 0; i < 3; i++) {
 				if (player[i] == Vote.negative) {
 					if (GUI.Button (new Rect(240, 30 + 94 * i, 50, 50), tickImage)) {
+						if (audio.isPlaying)
+							audio.Stop ();
+						this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+						audio.Play ();
+						
 						player[i] = Vote.noVote;
 					}
 				}
@@ -114,6 +144,11 @@ public class VoteScreenGUI : MonoBehaviour {
 		else {
 			for (int i = 0; i < 3; i++) {
 				if (GUI.Button (new Rect(240, 30 + 94 * i, 50, 50), negativeImage)) {
+					if (audio.isPlaying)
+						audio.Stop ();
+					this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+					audio.Play ();
+					
 					player[i] = Vote.negative;
 				}
 			}
@@ -122,6 +157,11 @@ public class VoteScreenGUI : MonoBehaviour {
 		GUI.color = Color.black;
 		if (positiveVote && neutralVote && negativeVote) {
 			if (GUI.Button (new Rect(30, 288, 100, 50), "Continue")) {
+				if (audio.isPlaying)
+					audio.Stop ();
+				this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+				audio.Play ();
+				
 				Application.LoadLevel ("ScoreScreen");
 			}
 		}
@@ -129,6 +169,11 @@ public class VoteScreenGUI : MonoBehaviour {
 			GUI.Box (new Rect(30, 288, 100, 50), "");
 		}
 		if (GUI.Button (new Rect(150, 288, 100, 50), "Exit")) {
+			if (audio.isPlaying)
+				audio.Stop ();
+			this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+			audio.Play ();
+			
 			Application.Quit ();
 		}
 	}

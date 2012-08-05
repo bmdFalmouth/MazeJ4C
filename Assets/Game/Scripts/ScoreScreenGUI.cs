@@ -3,6 +3,11 @@ using System.Collections;
 
 public class ScoreScreenGUI : MonoBehaviour {
 	
+	public AudioClip[] clips;		
+	AudioClip randomClip() {
+		return clips[Random.Range (0, clips.GetLength (0) - 1)];
+	}
+	
 	public Texture2D avatar1;
 	public Texture2D avatar2;
 	public Texture2D avatar3;
@@ -33,14 +38,29 @@ public class ScoreScreenGUI : MonoBehaviour {
 		GUI.Label (new Rect(100, 324, 100, 20), "Score: ");
 		
 		if (GUI.Button (new Rect(Screen.width - 320, Screen.height - 50, 100, 50), "Continue")) {
+			if (audio.isPlaying)
+				audio.Stop ();
+			this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+			audio.Play ();
+			
 			Application.LoadLevel ("RichLeadNetworkTest");
 		}
 		
 		if (GUI.Button (new Rect(Screen.width - 210, Screen.height - 50, 100, 50), "Main Menu")) {
+			if (audio.isPlaying)
+				audio.Stop ();
+			this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+			audio.Play ();
+			
 			Application.LoadLevel ("MainMenu");
 		}
 		
 		if (GUI.Button (new Rect(Screen.width - 100, Screen.height - 50, 100, 50), "Exit")) {
+			if (audio.isPlaying)
+				audio.Stop ();
+			this.gameObject.GetComponent<AudioSource>().clip = randomClip();
+			audio.Play ();
+			
 			Application.Quit ();
 		}
 	}
