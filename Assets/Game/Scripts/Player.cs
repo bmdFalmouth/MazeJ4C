@@ -341,52 +341,25 @@ public class Player : MonoBehaviour
 				stream.Serialize(ref support1);
 				stream.Serialize(ref support2);
 				stream.Serialize(ref support3);
-			}
-			
-			/*if(sendLevel && Network.isServer)
-			{
-				titleType = 1; 
-				foreach(GameObject piece in GameObject.FindGameObjectsWithTag("MazeWall"))
-				{
-					readPos = piece.transform.position;
-					readRot = piece.transform.rotation.eulerAngles;
-					
-					stream.Serialize(ref titleType); 
-					stream.Serialize(ref readPos); 
-					stream.Serialize(ref readRot); 
-				}
-				
-				sendLevel = false;
-			}*/
-			
+			}		
 			
 		}
 		else
-		{
-			stream.Serialize(ref x);	
+		{			
+			stream.Serialize(ref x);
 			
-				stream.Serialize(ref x);
+			if(Network.isClient)
+			{
+				stream.Serialize(ref leadScore);
+				stream.Serialize(ref support1);
+				stream.Serialize(ref support2);
+				stream.Serialize(ref support3); 
 			
-				if(Network.isClient)
-				{
-					stream.Serialize(ref leadScore);
-					stream.Serialize(ref support1);
-					stream.Serialize(ref support2);
-					stream.Serialize(ref support3); 
-			
-					GameSettings.leadScore = leadScore;
-					GameSettings.support1Score = support1;
-					GameSettings.support2Score = support2;
-					GameSettings.support3Score = support3;
-				}
-				
-				/*switch(titleType)
-				{
-					case 1:
-						Instantiate(wall,readPos, Quaternion.Euler(readRot));
-					break;
-				}*/
-			
+				GameSettings.leadScore = leadScore;
+				GameSettings.support1Score = support1;
+				GameSettings.support2Score = support2;
+				GameSettings.support3Score = support3;
+			}		
 			
 		}
 	}
