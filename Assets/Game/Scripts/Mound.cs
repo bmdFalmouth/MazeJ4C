@@ -15,9 +15,9 @@ public class Mound : MonoBehaviour {
 	
 	}
 	
-	void OnTriggerEvent(Collider other) {
+	void OnTriggerEnter(Collider other) {
 		audio.Play ();
-		Destroy(gameObject, 1.0f);
+		Destroy(gameObject, audio.clip.length);
 		Instantiate (chest, new Vector3 (this.transform.position.x, this.transform.position.y, this.transform.position.z), this.transform.rotation);
 	}
 }

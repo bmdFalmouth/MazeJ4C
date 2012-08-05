@@ -7,9 +7,11 @@ public class IntroGUI : MonoBehaviour {
 	public AudioClip sniffing;
 	public Texture2D story;
 	public Texture2D panel1;
+	public AudioClip ping;
 	public Texture2D panel2;
 	public AudioClip cheer;
 	public Texture2D panel3;
+	public AudioClip ooo;
 	public Texture2D panel4;
 	public Texture2D panel5;
 	public AudioClip evilLaugh;
@@ -104,10 +106,9 @@ public class IntroGUI : MonoBehaviour {
 	
 	void OnGUI() {
 		if (introState == State.titleScreen) {
-			if (!audio.isPlaying) {
-				this.gameObject.GetComponent<AudioSource>().clip = sniffing;
-				audio.Play ();
-			}
+			this.gameObject.GetComponent<AudioSource>().clip = sniffing;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
 			
 			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), titleCard, ScaleMode.StretchToFill);
 			GUI.Label (new Rect(Screen.width / 2 - 50, Screen.height - 20, 150, 20), "Press space to continue.");
@@ -126,44 +127,51 @@ public class IntroGUI : MonoBehaviour {
 		}
 		
 		else if (introState == State.panel1) {
+			this.gameObject.GetComponent<AudioSource>().clip = ping;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
+			
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel1, ScaleMode.StretchToFill);
-			//play ping sound
 		}
 		
 		else if (introState == State.panel2) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel2, ScaleMode.StretchToFill);
 			
-			if (!audio.isPlaying) {
-				this.gameObject.GetComponent<AudioSource>().clip = cheer;
-				audio.Play ();
-			}
+			this.gameObject.GetComponent<AudioSource>().clip = cheer;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
 		}
 		
 		else if (introState == State.panel3) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel3, ScaleMode.StretchToFill);
-			//*oooh* sound effect
+			
+			this.gameObject.GetComponent<AudioSource>().clip = ooo;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
 		}
 		
 		else if (introState == State.panel4) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel4, ScaleMode.StretchToFill);
-			//ping sound
+			
+			this.gameObject.GetComponent<AudioSource>().clip = sniffing;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
 		}
 		
 		else if (introState == State.panel5) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel5, ScaleMode.StretchToFill);
-			if (!audio.isPlaying) {
-				this.gameObject.GetComponent<AudioSource>().clip = evilLaugh;
-				audio.Play ();
-			}
+			
+			this.gameObject.GetComponent<AudioSource>().clip = evilLaugh;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
 		}
 		
 		else if (introState == State.panel6) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel6, ScaleMode.StretchToFill);
 			
-			if (!audio.isPlaying) {
-				this.gameObject.GetComponent<AudioSource>().clip = yay;
-				audio.Play ();
-			}
+			this.gameObject.GetComponent<AudioSource>().clip = yay;
+			audio.Play ();
+			Destroy(this.gameObject.GetComponent<AudioSource>().clip, audio.clip.length);
 		}
 		
 		else if (introState == State.tutorialScreen2) {
