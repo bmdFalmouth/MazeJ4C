@@ -60,12 +60,12 @@ function OnGUI()
 
 function OnConnectedToServer()
 {
-	 Debug.Log ("I HAVE DONE THIS LOG!");
+	 /*Debug.Log ("I HAVE DONE THIS LOG!");
 	    
 	    var player:Player;
 	    var playerObject:GameObject = GameObject.FindGameObjectWithTag("Player");
 	    player = playerObject.GetComponent("Player");
-	 	player.SerLevel();
+	 	player.SerLevel();*/
 	 	
     for (var go : GameObject in FindObjectsOfType(GameObject))
 	    go.SendMessage("OnNetworkLoadedLevel", SendMessageOptions.DontRequireReceiver);

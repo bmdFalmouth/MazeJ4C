@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class GameGUI : MonoBehaviour {
@@ -71,4 +71,4 @@ public class GameGUI : MonoBehaviour {
 	void OnGUI() {
 		GUI.Label (new Rect (Screen.width - 100, 10, 100, 20), "Score: " + score);
 	}
-}
+}*/
