@@ -17,14 +17,15 @@ public class Exit : MonoBehaviour {
 	{
 		if (other.tag.Equals("Player")) 
 		{
-			if(Network.isServer)
+			/*if(Network.isServer)
 			{
 				foreach(NetworkPlayer player in Network.connections)
 				{
 					Network.CloseConnection(player, true);
 				}
-			}
+			}*/
 			//Network.CloseConnection(
+			other.GetComponent<Player>().state = Player.State.RATING;
 			Application.LoadLevel("VoteScreen");
 			Debug.Log ("Exit");
 		}

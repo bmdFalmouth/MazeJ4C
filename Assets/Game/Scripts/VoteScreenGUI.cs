@@ -11,7 +11,7 @@ public class VoteScreenGUI : MonoBehaviour {
 	public Texture2D negativeImage;
 	public Texture2D tickImage;
 	
-	enum Vote {
+	public enum Vote {
 		
 		noVote,
 		positive,
@@ -19,7 +19,7 @@ public class VoteScreenGUI : MonoBehaviour {
 		negative
 	};
 	
-	private Vote[] player = new Vote[3] { Vote.noVote, Vote.noVote, Vote.noVote };
+	public Vote[] player = new Vote[3] { Vote.noVote, Vote.noVote, Vote.noVote };
 	
 	// Use this for initialization
 	void Start () {
@@ -118,7 +118,9 @@ public class VoteScreenGUI : MonoBehaviour {
 		}
 		
 		if (positiveVote && neutralVote && negativeVote) {
-			if (GUI.Button (new Rect(30, 288, 100, 50), "Continue")) {
+			if (GUI.Button (new Rect(30, 288, 100, 50), "Continue")) 
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreTimer>().GetArray(player);
 				Application.LoadLevel ("ScoreScreen");
 			}
 		}

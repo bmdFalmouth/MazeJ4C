@@ -35,11 +35,26 @@ public class Player : MonoBehaviour
 		None=10,
 	};
 	
+	public enum State
+	{
+		NO_SET,
+		GAME,
+		RATING,
+		SCORES
+	};
+	
+	public State state = State.NO_SET;
+	State pState = State.NO_SET;
 	public ArrowState arrowState1;
 	public ArrowState arrowState2;
 	public ArrowState arrowState3;
 	
-
+	void Awake()
+	{
+		DontDestroyOnLoad(this.gameObject);
+		state = State.GAME;
+	}
+	
 	void Start () 
 	{
 		spotLightTransform = GameObject.Find("Spotlight").transform;
@@ -64,21 +79,39 @@ public class Player : MonoBehaviour
 	}
 	void Update () 
 	{
-		if(Network.isServer)
+		switch(state)
 		{
-			rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
-			rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
+			case State.GAME:
+				if(Network.isServer)
+				{
+					rigidbody.AddTorque(-speed*Input.GetAxis("Horizontal")*Vector3.forward);
+					rigidbody.AddTorque(speed*Input.GetAxis("Vertical")*Vector3.right);
 		
-			if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
-			{
-				if(leftRight)
-					this.gameObject.GetComponent<AudioSource>().clip = stepOne;
+					if((Input.GetAxis("Horizontal") != 0 ||Input.GetAxis("Horizontal") != 0 )&&!this.gameObject.GetComponent<AudioSource>().isPlaying)
+					{
+						if(leftRight)
+							this.gameObject.GetComponent<AudioSource>().clip = stepOne;
+						else
+							this.gameObject.GetComponent<AudioSource>().clip = stepTwo;
+							this.gameObject.GetComponent<AudioSource>().Play();
+					}	
+				}
+				UpdateArrowStates();
+			break;
+			
+			case State.RATING:
+				if(checkFirst())
+				{
+					Destroy(this.gameObject.GetComponent<Rigidbody>());
+					Destroy(this.gameObject.GetComponent<SphereCollider>());
+					Destroy(this.gameObject.GetComponent<MeshRenderer>());
+				}
 				else
-					this.gameObject.GetComponent<AudioSource>().clip = stepTwo;
-				this.gameObject.GetComponent<AudioSource>().Play();
-			}
+				{
+					
+				}
+			break;
 		}
-		UpdateArrowStates();	
 	}
 	
 	void HideAllArrows()
@@ -235,5 +268,16 @@ public class Player : MonoBehaviour
 		
 		foreach(GameObject support in GameObject.FindGameObjectsWithTag("Support"))
 			GUI.Label(new Rect(500,700,100,100), support.GetComponent<Controls>().x.ToString());
+	}
+	
+	bool checkFirst()
+	{
+		if(state != pState)
+		{
+			pState = state;
+			return true;
+		}
+		else
+			return false;
 	}
 }
