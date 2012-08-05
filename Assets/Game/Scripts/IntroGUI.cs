@@ -4,13 +4,16 @@ using System.Collections;
 public class IntroGUI : MonoBehaviour {
 	
 	public Texture2D titleCard;
+	public AudioClip sniffing;
 	public Texture2D story;
 	public Texture2D panel1;
 	public Texture2D panel2;
+	public AudioClip cheer;
 	public Texture2D panel3;
 	public Texture2D panel4;
 	public Texture2D panel5;
 	public Texture2D panel6;
+	public AudioClip yay;
 	private float startTime = 0.0f;
 	private float currentTime = 0.0f;
 	private const int timeOut = 3;
@@ -42,9 +45,7 @@ public class IntroGUI : MonoBehaviour {
 		
 		switch (introState) {
 		
-		case State.titleScreen:			
-			//play sniffing sound
-			
+		case State.titleScreen:
 			if (Input.GetKeyDown ("space")) {
 				introState = State.storyScreen;
 			}
@@ -102,6 +103,11 @@ public class IntroGUI : MonoBehaviour {
 	
 	void OnGUI() {
 		if (introState == State.titleScreen) {
+			if (!audio.isPlaying) {
+				this.gameObject.GetComponent<AudioSource>().clip = sniffing;
+				audio.Play ();
+			}
+			
 			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), titleCard, ScaleMode.StretchToFill);
 			GUI.Label (new Rect(Screen.width / 2 - 50, Screen.height - 20, 150, 20), "Press space to continue.");
 		}
@@ -125,7 +131,11 @@ public class IntroGUI : MonoBehaviour {
 		
 		else if (introState == State.panel2) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel2, ScaleMode.StretchToFill);
-			//star appears behind patch, applause sound
+			
+			if (!audio.isPlaying) {
+				this.gameObject.GetComponent<AudioSource>().clip = cheer;
+				audio.Play ();
+			}
 		}
 		
 		else if (introState == State.panel3) {
@@ -145,13 +155,16 @@ public class IntroGUI : MonoBehaviour {
 		
 		else if (introState == State.panel6) {
 			GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), panel6, ScaleMode.StretchToFill);
-			//cheers and whoops
+			
+			if (!audio.isPlaying) {
+				this.gameObject.GetComponent<AudioSource>().clip = yay;
+				audio.Play ();
+			}
 		}
 		
 		else if (introState == State.tutorialScreen2) {
 			GUI.color = Color.black;
 			GUI.Label (new Rect(Screen.width / 2 - 96, 30, 250, 20), "You control patch with the arrow keys");
-			//arrows appear
 			GUI.Label (new Rect(Screen.width / 2 - 89, 60, 250, 20), "Your \"friends\" direct you with theirs");
 			GUI.Label (new Rect(Screen.width / 2 - 155, 120, 350, 20), "If anyone leaves the game, their score is shared with other players");
 			GUI.Label (new Rect(Screen.width / 2 - 19, 180, 150, 20), "Time is limited");
