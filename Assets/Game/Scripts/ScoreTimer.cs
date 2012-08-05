@@ -14,7 +14,7 @@ public class ScoreTimer : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Network.isClient && Application.loadedLevelName == "RichLeadNetworkTest")
+		if(Network.isServer && Application.loadedLevelName == "RichLeadNetworkTest")
 			score =  (int)Mathf.Floor(Time.timeSinceLevelLoad + tScore);
 	}
 	
