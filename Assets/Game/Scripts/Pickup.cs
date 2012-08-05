@@ -53,13 +53,17 @@ public class Pickup : MonoBehaviour {
 			
 			if(timer>5)
 			{
-			this.gameObject.GetComponent<iTweenEvent>().Play();
-			Destroy(gameObject,0.5f);
+				this.gameObject.GetComponent<iTweenEvent>().Play();
+				Destroy(gameObject,0.5f);
 			
-			audio.Play ();
+				audio.Play ();
 			
+<<<<<<< HEAD
 			//GameGUI gameGUI = Camera.main.GetComponent<GameGUI>();
 			GameGUI.score += scoreValue;
+=======
+				GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreTimer>().GetTreasure(scoreValue);
+>>>>>>> origin/BackUP-Network
 			}
 		}
 	}
