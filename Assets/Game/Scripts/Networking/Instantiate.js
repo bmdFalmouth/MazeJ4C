@@ -19,8 +19,12 @@ function OnNetworkLoadedLevel()
 		Network.Instantiate(Template, transform.position, Quaternion.AngleAxis(180.0,Vector3.up),0);
 	else
 	{
-		Network.Instantiate(Support, transform.position, transform.rotation,0);
-		GameObject.FindGameObjectWithTag("Player").rigidbody.active = false;
+		if(GameObject.FindGameObjectsWithTag("Support").Length < Network.connections.Length)
+		{
+			Debug.Log("Number of connections: " + Network.connections.Length.ToString());
+			Network.Instantiate(Support, transform.position, transform.rotation,0);
+			GameObject.FindGameObjectWithTag("Player").rigidbody.active = false;
+		}
 	}
 }
 

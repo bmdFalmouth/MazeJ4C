@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour {
 	
 	public AudioClip soundEffect;
 	public int scoreValue = 5;
+	public bool notKilled = true;
 	
 	PickUpType type;
 	// Use this for initialization
@@ -48,18 +49,34 @@ public class Pickup : MonoBehaviour {
 	
 	}
 	
-	void OnTriggerEnter(Collider other) {
-		if (other.tag.Equals("Player")) {
-			
-			if(timer>5)
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.tag.Equals("Player")) 
+		{
+			if(notKilled)
 			{
 				this.gameObject.GetComponent<iTweenEvent>().Play();
-				Destroy(gameObject,0.5f);
+				Destroy(gameObject,2.0f);
 			
 				audio.Play ();
+			
 				GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreTimer>().GetTreasure(scoreValue);
+				notKilled = false;
 			}
 		}
 	}
+	/*void OnTriggerStay(Collider other) {
+		if (other.tag.Equals("Player")) {
+			
+			if(timer>2)
+			{
+			this.gameObject.GetComponent<iTweenEvent>().Play();
+			Destroy(gameObject,0.5f);
+			
+			audio.Play ();
+			
+			GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreTimer>().GetTreasure(scoreValue);
+			}
+		}*/
+	//}
 }
-

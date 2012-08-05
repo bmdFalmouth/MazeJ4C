@@ -17,17 +17,18 @@ public class Mound : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if (other.tag.Equals("Player")) {
-			
-			
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.tag.Equals("Player"))
+		{
 			this.gameObject.GetComponent<iTweenEvent>().Play();
+			Destroy(this.gameObject);
 			if(!pickupSpawn)
 			{
 				Instantiate(pickup,new Vector3(this.transform.position.x+1,this.transform.position.y,this.transform.position.z+1),Quaternion.identity);
 				pickupSpawn = true;
 			}
-			Destroy(gameObject,0.5f);
+			
 			
 			audio.Play ();
 		}
